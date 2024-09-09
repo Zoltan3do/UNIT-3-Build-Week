@@ -14,16 +14,16 @@ function MyNavbar() {
     return (
         <>
             <Row className="fixed-top w-100 fs-xs">
-                <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top py-2">
+                <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top py-2 col">
                     <Container className="d-flex justify-content-between align-items-center ">
                         <Navbar.Brand href="/" >
                             <div style={{ width: 33 }} >
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin logo"  className="w-100"/>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin logo" className="w-100" />
                             </div>
 
                         </Navbar.Brand>
 
-                        <Form className="d-none d-lg-block" style={{marginLeft:"-150px"}}>
+                        <Form className="d-none d-lg-block" style={{ marginLeft: "-150px" }}>
                             <Form.Group className="d-flex align-items-center">
                                 <Search className="me-2 navbar-icon" size={20} />
                                 <FormControl type="text" placeholder="Cerca" className="w-100 search-background " />
@@ -32,7 +32,7 @@ function MyNavbar() {
 
                         <div className="d-flex align-items-center" >
                             <div className="navbar-icon-container text-center mx-3">
-                                <HouseDoorFill size={20} className="navbar-icon"/>
+                                <HouseDoorFill size={20} className="navbar-icon" />
                                 <div>Home</div>
                             </div>
 
@@ -91,8 +91,8 @@ function MyNavbar() {
                                     </Dropdown.Menu>
                                 </Dropdown>
 
-                                <div className="navbar-icon-container text-center d-none d-lg-block mx-2 mt-2 text-premium-color text-decoration-underline fs-xs">
-                                    Passa a Premium per 0 <br /> EUR
+                                <div className="navbar-icon-container text-center d-none d-lg-block mx-2 mt-2  text-decoration-underline fs-xs">
+                                    <a href="#" className="text-premium-color">Passa a Premium per 0 <br /> EUR</a>
                                 </div>
                             </div>
 
