@@ -58,7 +58,7 @@ function MyNavbar({ onScrollChange }) {
 
                             <div className="d-flex align-items-center" >
                                 <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                    <HouseDoorFill size={20}  />
+                                    <HouseDoorFill size={20} />
                                     <div>Home</div>
                                 </div>
 
@@ -68,7 +68,7 @@ function MyNavbar({ onScrollChange }) {
                                 </div>
 
                                 <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                    <BriefcaseFill size={20}/>
+                                    <BriefcaseFill size={20} />
                                     <div>Lavoro</div>
                                 </div>
 
@@ -82,7 +82,7 @@ function MyNavbar({ onScrollChange }) {
                                     <div>Notifiche</div>
                                 </div>
 
-                                <Dropdown className="me-5">
+                                <Dropdown className="me-5 ">
                                     <Dropdown.Toggle
                                         variant="link"
                                         className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
@@ -92,7 +92,7 @@ function MyNavbar({ onScrollChange }) {
                                             src="../assets/imgs/default-profile-pic.png"
                                             alt="profilo"
                                         />
-                                        <div className="ms-2 text-dark">
+                                        <div className="ms-2 text-dark  navbar-icon">
                                             Tu
                                         </div>
                                     </Dropdown.Toggle>
@@ -102,13 +102,13 @@ function MyNavbar({ onScrollChange }) {
                                 </Dropdown>
 
 
-                                <div className="d-flex border border-bottom-0 border-top-0 border-end-0">
+                                <div className="d-flex border border-bottom-0 border-top-0 border-end-0 ">
                                     <Dropdown>
                                         <Dropdown.Toggle
                                             variant="link"
                                             className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
                                         >
-                                            <div className="mx-2 text-dark">
+                                            <div className="mx-2 text-dark navbar-icon">
                                                 <i className="bi bi-grid"></i>
                                                 <div>Per le aziende</div>
                                             </div>
@@ -191,32 +191,32 @@ function MyNavbar({ onScrollChange }) {
                             </Form>
 
                             <div className="d-flex align-items-center" >
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <HouseDoorFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <HouseDoorFill size={20} />
                                     <div>Home</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <PeopleFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <PeopleFill size={20} />
                                     <div>Rete</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <BriefcaseFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <BriefcaseFill size={20} />
                                     <div>Lavoro</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <ChatDotsFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <ChatDotsFill size={20} />
                                     <div>Messaggistica</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3 me-5">
-                                    <BellFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 me-5 navbar-icon">
+                                    <BellFill size={20} />
                                     <div>Notifiche</div>
                                 </div>
 
-                                <Dropdown className="me-5">
+                                <Dropdown className="me-5 ">
                                     <Dropdown.Toggle
                                         variant="link"
                                         className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
@@ -226,7 +226,7 @@ function MyNavbar({ onScrollChange }) {
                                             src="../assets/imgs/default-profile-pic.png"
                                             alt="profilo"
                                         />
-                                        <div className="ms-2 text-dark">
+                                        <div className="ms-2 text-dark navbar-icon">
                                             Tu
                                         </div>
                                     </Dropdown.Toggle>
@@ -236,13 +236,13 @@ function MyNavbar({ onScrollChange }) {
                                 </Dropdown>
 
 
-                                <div className="d-flex border border-bottom-0 border-top-0 border-end-0">
+                                <div className="d-flex border border-bottom-0 border-top-0 border-end-0 ">
                                     <Dropdown>
                                         <Dropdown.Toggle
                                             variant="link"
                                             className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
                                         >
-                                            <div className="mx-2 text-dark">
+                                            <div className="mx-2 text-dark navbar-icon">
                                                 <i className="bi bi-grid"></i>
                                                 <div>Per le aziende</div>
                                             </div>
