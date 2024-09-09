@@ -58,28 +58,28 @@ function MyNavbar({ onScrollChange }) {
                             </Form>
 
                             <div className="d-flex align-items-center" >
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <HouseDoorFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <HouseDoorFill size={20}  />
                                     <div>Home</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <PeopleFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3  navbar-icon">
+                                    <PeopleFill size={20} />
                                     <div>Rete</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <BriefcaseFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <BriefcaseFill size={20}/>
                                     <div>Lavoro</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3">
-                                    <ChatDotsFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                    <ChatDotsFill size={20} />
                                     <div>Messaggistica</div>
                                 </div>
 
-                                <div className="navbar-icon-container text-center mx-3 me-5">
-                                    <BellFill size={20} className="navbar-icon" />
+                                <div className="navbar-icon-container text-center mx-3 me-5 navbar-icon">
+                                    <BellFill size={20} />
                                     <div>Notifiche</div>
                                 </div>
 
@@ -128,12 +128,12 @@ function MyNavbar({ onScrollChange }) {
                         </Container>
                     </Navbar>
                     <Navbar
-                        className="sticky-top border border-start-0 border-end-0"
+                        className="sticky-top border border-start-0 border-end-0 second-nav w-100 py-2"
                         id="navbar-body"
                         bg="white"
                         expand="lg"
                     >
-                        <Container className="nav_scroll ">
+                        <Container className="nav_scroll">
                             <div>
                                 {/* <Link to="/">
                               <img

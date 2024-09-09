@@ -54,7 +54,8 @@
 }
 
 .navbar-icon {
-    color: gray !important
+    color: gray !important;
+    transition-duration: 0.2s;
 }
 
 .navbar-icon:hover {
@@ -72,6 +73,11 @@
     margin-top: 6%;
     justify-content: center;
     align-items: center;
+ 
+}
+
+.second-nav{
+    box-shadow: 0px 5px 10px -7px #000000
 }
 
 
