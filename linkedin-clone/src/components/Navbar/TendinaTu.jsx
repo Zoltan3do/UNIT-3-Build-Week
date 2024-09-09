@@ -1,4 +1,4 @@
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 import "./TendinaTu.css"
 
 function TendinaTu() {
@@ -15,25 +15,23 @@ function TendinaTu() {
                     </div>
                 </div>
                 <div>
-                    <p>Visualizza profilo</p>
+                    <Button className="w-100 py-0 border border-primary bg-light text-primary fw-semibold rounded rounded-5">Visualizza profilo</Button>
                 </div>
             </ListGroup.Item>
             <ListGroup.Item className="custom-list-group-item">
                 <h5>Account</h5>
-                <p className="my-0">Impostazioni e privacy</p>
-                <p className="my-1">Guida</p>
-                <p className="my-0">Lingua</p>
-                <hr />
+                <p className="my-0"><a href="#" className="text-secondary overLink">Impostazioni e privacy</a></p>
+                <p className="my-1"><a href="#" className="text-secondary overLink">Guida</a></p>
+                <p className="my-0"><a href="#" className="text-secondary overLink">Lingua</a></p>
             </ListGroup.Item>
             <ListGroup.Item className="custom-list-group-item">
                 <h5>Gestisci</h5>
-                <p className="my-0">Post e attività</p>
-                <p className="my-1 truncate-text">Account per la pubblicazione di offerte di lavoro</p>
-                <p className="my-0">Lingua</p>
-                <hr />
+                <p className="my-0"><a href="#" className="text-secondary overLink">Post e attività</a></p>
+                <p className="my-1 truncate-text"><a href="#" className="text-secondary overLink">Account per la pubblicazione di offerte di lavoro</a></p>
+                <p className="my-0"><a href="#" className="text-secondary overLink">Lingua</a></p>
             </ListGroup.Item>
-            <ListGroup.Item className="custom-list-group-item">
-                <p className="my-0">Esci</p>
+            <ListGroup.Item className="custom-list-group-item overLink">
+                <p className="my-0"><a href="#" className="text-secondary overLink">Esci</a></p>
             </ListGroup.Item>
         </ListGroup>
     );

@@ -1,5 +1,9 @@
 .truncate-text {
-    white-space: nowrap; 
-    overflow: hidden;   
-    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overLink:hover {
+    text-decoration: underline;
 }

@@ -52,3 +52,12 @@
 .fs-xs{
     font-size: smaller;
 }
+
+.navbar-icon{
+    color:gray !important
+}
+
+.navbar-icon:hover{
+    color:black !important;
+    cursor:pointer !important
+}

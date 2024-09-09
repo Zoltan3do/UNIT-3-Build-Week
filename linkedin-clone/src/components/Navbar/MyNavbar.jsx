@@ -25,14 +25,14 @@ function MyNavbar() {
 
                         <Form className="d-none d-lg-block" style={{marginLeft:"-150px"}}>
                             <Form.Group className="d-flex align-items-center">
-                                <Search className="me-2" size={20} />
+                                <Search className="me-2 navbar-icon" size={20} />
                                 <FormControl type="text" placeholder="Cerca" className="w-100 search-background " />
                             </Form.Group>
                         </Form>
 
                         <div className="d-flex align-items-center" >
                             <div className="navbar-icon-container text-center mx-3">
-                                <HouseDoorFill size={20} className="navbar-icon" />
+                                <HouseDoorFill size={20} className="navbar-icon"/>
                                 <div>Home</div>
                             </div>
 
