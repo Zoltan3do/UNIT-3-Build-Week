@@ -47,7 +47,6 @@ function MyNavbar({ onScrollChange }) {
                                 <div style={{ width: 33 }} >
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin logo" className="w-100" />
                                 </div>
-
                             </Navbar.Brand>
 
                             <Form className="d-none d-lg-block" style={{ marginLeft: "-150px" }}>
