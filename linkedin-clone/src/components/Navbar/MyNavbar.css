@@ -49,15 +49,30 @@
     object-fit: cover;
 }
 
-.fs-xs{
+.fs-xs {
     font-size: smaller;
 }
 
-.navbar-icon{
-    color:gray !important
+.navbar-icon {
+    color: gray !important
 }
 
-.navbar-icon:hover{
-    color:black !important;
-    cursor:pointer !important
+.navbar-icon:hover {
+    color: black !important;
+    cursor: pointer !important
+}
+
+.secondNav {
+    transform: translateY(150);
+}
+
+.nav__scrol {
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar-body {
+    color: #666666;
+    font-size: 0.8rem;
+    border-bottom: #d1d1d1;
 }
