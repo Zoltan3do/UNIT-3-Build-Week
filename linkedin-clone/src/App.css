@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.no-scroll-margin{
+  margin-top:80px
+}
+
+.scroll-margin{
+  margin-top:150px
+}
