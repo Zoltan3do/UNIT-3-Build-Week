@@ -16,7 +16,7 @@ const PeopleToKnowSide = () => {
     return profilesArray.sort(() => Math.random() - 0.5);
   };
 
-  // Funzione per fare fetch dei profili dall'API
+  // la fetch dei profili
   const fetchProfiles = async () => {
     try {
       const response = await fetch(urlAPI, {
@@ -39,6 +39,7 @@ const PeopleToKnowSide = () => {
 
   useEffect(() => {
     fetchProfiles();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Funzione per alternare tra "Collegati" e "In sospeso"
