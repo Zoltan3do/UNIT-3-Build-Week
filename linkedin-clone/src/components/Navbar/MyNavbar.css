@@ -66,13 +66,15 @@
     transform: translateY(150);
 }
 
-.nav__scrol {
+.nav_scroll {
     display: flex;
     flex-direction: row;
+    margin-top: 6%;
+    justify-content: center;
+    align-items: center;
 }
 
-#navbar-body {
-    color: #666666;
-    font-size: 0.8rem;
-    border-bottom: #d1d1d1;
+.no-scroll-margin{
+    margin-bottom:500px
 }
+

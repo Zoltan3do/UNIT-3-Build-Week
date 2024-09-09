@@ -10,10 +10,10 @@ import {
 import { Search, HouseDoorFill, PeopleFill, BriefcaseFill, ChatDotsFill, BellFill } from "react-bootstrap-icons";
 import TendinaTu from "./TendinaTu";
 // import {Link} from "react-router-dom"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./MyNavbar.css";
 
-function MyNavbar() {
+function MyNavbar({ onScrollChange }) {
 
     const [isScroll, setIsscroll] = useState(false);
 
@@ -25,13 +25,23 @@ function MyNavbar() {
         }
     };
 
-    window.addEventListener("scroll", onScroll);
+    useEffect(() => {
+        onScrollChange(isScroll)
+    }, [isScroll, onScrollChange]);
+
+    useEffect(() => {
+        window.addEventListener("scroll", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll)
+        }
+    })
+
 
     return (
         <>
             {isScroll ? (
                 <Row className="fixed-top w-100 fs-xs">
-                    <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top py-2 mb-5">
+                    <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top py-2 ">
                         <Container className="d-flex justify-content-between align-items-center ">
                             <Navbar.Brand href="/" >
                                 <div style={{ width: 33 }} >
@@ -99,7 +109,7 @@ function MyNavbar() {
                                             variant="link"
                                             className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
                                         >
-                                            <div className="ms-2 text-dark">
+                                            <div className="mx-2 text-dark">
                                                 <i className="bi bi-grid"></i>
                                                 <div>Per le aziende</div>
                                             </div>
@@ -118,18 +128,18 @@ function MyNavbar() {
                         </Container>
                     </Navbar>
                     <Navbar
-                        className="py-2 sticky-top mt-5"
+                        className="sticky-top border border-start-0 border-end-0"
                         id="navbar-body"
                         bg="white"
                         expand="lg"
                     >
-                        <Container>
-                            <div className="nav__scrol">
+                        <Container className="nav_scroll ">
+                            <div>
                                 {/* <Link to="/">
                               <img
                                   className="navbar-icon-container d-none d-md-block"
                                   id="navbar-logo"
-                                  src="{userProfile.image}"
+                                  src="{url}"
                                   alt="linkedin-logo"
                                   style={{
                                       borderRadius: "50%",
@@ -149,13 +159,13 @@ function MyNavbar() {
                             </div>
 
                             <div className="d-flex">
-                                <Button variant="light" className="mr-2 bg-light text-secondary text-muted rounded-5">
+                                <Button variant="light" className=" bg-light text-secondary text-muted rounded-5 me-3 fw-semibold">
                                     Altro
                                 </Button>
-                                <Button variant="light" className="mr-2 bg-light text-primary fw-semibold rounded-5">
+                                <Button variant="light" className="bg-light text-primary fw-semibold rounded-5 me-3">
                                     Aggiungi sezione del profilo
                                 </Button>
-                                <Button variant="primary" className="btn-primary rounded-5">
+                                <Button variant="primary" className="btn-primary rounded-5 fw-semibold">
                                     Disponibile per
                                 </Button>
                             </div>
@@ -164,7 +174,7 @@ function MyNavbar() {
                 </Row>
 
             ) : (
-                <Row className="fixed-top w-100 fs-xs">
+                <Row className="fixed-top w-100 fs-xs no-scroll-margin">
                     <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top py-2 col">
                         <Container className="d-flex justify-content-between align-items-center ">
                             <Navbar.Brand href="/" >
@@ -233,7 +243,7 @@ function MyNavbar() {
                                             variant="link"
                                             className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
                                         >
-                                            <div className="ms-2 text-dark">
+                                            <div className="mx-2 text-dark">
                                                 <i className="bi bi-grid"></i>
                                                 <div>Per le aziende</div>
                                             </div>
