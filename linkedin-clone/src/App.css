@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+.bg-advertising {
+  background-image: url("https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?semt=ais_hybrid");
+  background-size: cover;
+  height: 6em;
+  position: relative;
+}
+
+.logo-advertising {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+.adv-btn{
+  width: 20em;
+ 
+}
+.adv-badge{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.btn-all-profile{
+  cursor: pointer;
+}

@@ -1,13 +1,17 @@
-import { Row, Col } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import SidebarProfile from "./SidebarProfile"
 import AdvertisingSide from "./AdvertisingSide"
+import AllSideProfiles from "./AllSideProfiles"
+import PeopleToKnowSide from "./PeopleToKnowSide"
 const MainSidebar = () =>{
     return(
-       <Row>
-        <Col>
+       <Row className="flex-column">
+     
         <SidebarProfile/>
         <AdvertisingSide/>
-        </Col>
+        <AllSideProfiles/>
+        <PeopleToKnowSide/>
+        
        </Row>
     )
 }

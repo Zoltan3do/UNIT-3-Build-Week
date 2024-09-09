@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Row, Col, Button, Modal } from "react-bootstrap";
+import { Col, Button, Modal,Card } from "react-bootstrap";
 import { ImPencil } from "react-icons/im";
 
 const SidebarProfile = () => {
@@ -22,9 +22,10 @@ const SidebarProfile = () => {
 
   return (
     <>
-      <Row className="border border-1 rounded-1 py-3">
+      <Col className="mb-3" >
+      <Card className="border border-1 rounded-2 py-3">
         {/* Sezione Lingua del profilo */}
-        <Col className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between">
           <div>
             <h4>Lingua del profilo</h4>
             <p className="text-start">{lingua}</p>
@@ -38,11 +39,11 @@ const SidebarProfile = () => {
               <ImPencil />
             </Button>
           </div>
-        </Col>
+        </div>
         <hr />
         
         {/* Sezione Profilo pubblico e URL */}
-        <Col className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between">
           <div>
             <h4>Profilo pubblico e URL</h4>
             <p className="text-start">
@@ -56,8 +57,9 @@ const SidebarProfile = () => {
               <ImPencil />
             </Button>
           </div>
-        </Col>
-      </Row>
+        </div>
+        </Card>
+      </Col>
 
       {/* Modale per la scelta della lingua */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>

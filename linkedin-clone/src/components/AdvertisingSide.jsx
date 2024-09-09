@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Card } from "react-bootstrap";
-
+import { Button, Card, Badge,Col } from "react-bootstrap";
 
 const AdvertisingSide = () => {
   const [ads, setAds] = useState([]);
@@ -9,7 +8,10 @@ const AdvertisingSide = () => {
   // Funzione per fare fetch del file JSON
   const fetchAds = async () => {
     try {
-      const response = await fetch("/advertising.json"); // Percorso del file JSON
+      const response = await fetch("/advertising.json"); // Percorso del file JSON nella cartella public
+      if (!response.ok) {
+        throw new Error("Errore nella risposta del server");
+      }
       const data = await response.json();
       setAds(data);
     } catch (error) {
@@ -28,22 +30,43 @@ const AdvertisingSide = () => {
     }
   }, [ads]);
 
+  // Funzione per aprire il link al click del pulsante
+  const handleFollowClick = (url) => {
+    window.open(url, "_blank"); // Apre il link in una nuova scheda
+  };
+
   if (!randomAd) return null;
 
   return (
-    <Card className="mb-3">
+    <Col>
+    <Card className="mb-3 p-0 rounded-2">
+      <div className="bg-advertising">
+      <Badge bg="light" text="secondary" className="border border-1 adv-badge">
+        Promosso<a href="">...</a>
+      </Badge>
+      </div>
       <Card.Img
         variant="top"
         src={randomAd.logoUrl}
         alt={randomAd.company}
-        style={{ width: "100px", margin: "0 auto", paddingTop: "10px" }}
+        style={{ width: "140px" }}
+        className="logo-advertising"
+
       />
-      <Card.Body>
-        <Card.Title>{randomAd.company}</Card.Title>
-        <Card.Text>{randomAd.message}</Card.Text>
-        <Button variant="outline-primary">{randomAd.cta}</Button>
+      <Card.Body className="mt-2 pt-0 pb-2">
+        <Card.Title className="text-start mb-0">{randomAd.company}</Card.Title>
+        <Card.Text className="text-start mb-0">{randomAd.message}</Card.Text>
+        <Card.Text className="text-start"><small className="mb-0">Rimani al corrente con news e informazioni rilevanti </small></Card.Text>
+        <Button
+          className="adv-btn rounded-5 fw-bold"
+          variant="outline-primary"
+          onClick={() => handleFollowClick(randomAd.url)} // Gestione del click
+        >
+          {randomAd.cta}
+        </Button>
       </Card.Body>
     </Card>
+    </Col>
   );
 };
 
