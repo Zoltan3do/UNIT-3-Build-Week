@@ -1,0 +1,54 @@
+.text-premium-color {
+    color: #AE9D88
+}
+
+.search-background {
+    background-color: #EDF3F8 !important
+}
+
+/* Styles for MyNavbar */
+
+.navbar-profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    color: #000;
+}
+
+.custom-dropdown-menu {
+    min-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+.custom-list-group {
+    padding: 0;
+}
+
+.custom-list-group-item {
+    border: none;
+    padding: 10px;
+}
+
+.profile-pic-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fs-xs{
+    font-size: smaller;
+}
