@@ -7,8 +7,8 @@ import JobsCard from "./JobsCard"
 import AdvImg from "./AdvImg"
 const MainSidebar = () =>{
     return(
-       <Row className="flex-column">
-        <Col md={3}>
+       <Row className="flex-column no-scroll-margin">
+       
      
         <SidebarProfile/>
         <AdvertisingSide/>
@@ -16,7 +16,7 @@ const MainSidebar = () =>{
         <PeopleToKnowSide/>
         <JobsCard/>
         <AdvImg/>
-        </Col>
+       
        </Row>
     )
 }
