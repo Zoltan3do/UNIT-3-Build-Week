@@ -1,4 +1,4 @@
-import { Row } from "react-bootstrap"
+import { Row} from "react-bootstrap"
 import SidebarProfile from "./SidebarProfile"
 import AdvertisingSide from "./AdvertisingSide"
 import AllSideProfiles from "./AllSideProfiles"
