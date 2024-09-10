@@ -37,13 +37,17 @@ const HomeRightSide = () => {
          
           <Card.Text className="fw-bold text-secondary">Storie principali</Card.Text>
           <ul className="home-side-ul fw-bold">
-            <li>I migliori MBA per dare slancio alla tua carriera <span className="text-secondary">14,701 lettori</span></li>
-            <li>Allenare il pensiero strategico <span className="text-secondary">2,089 lettori</span> </li>
-            <li>I lavori più richiesti nei prossimi 5 anni <span className="text-secondary"> 915 lettori</span></li>
+            <li>I migliori MBA per dare slancio alla tua carriera <span className="text-secondary">-14,701 lettori</span></li>
+            <li>Allenare il pensiero strategico <span className="text-secondary">-2,089 lettori</span> </li>
+            <li>I lavori più richiesti nei prossimi 5 anni <span className="text-secondary"> -915 lettori</span></li>
+            <li>Se AI sale in cattedra<span className="text-secondary">-2,500 lettori</span> </li>
+            <li>Arriva il Voucher 3I per l'innovazione <span className="text-secondary"> -905 lettori</span></li>
             {showMore && (
               <>
-                <li>Che si dice della Nutella vegana <span className="text-secondary"></span></li>
-                <li>Fotogrammi dal Lido <span className="text-secondary">448 lettori</span> </li>
+                <li>Che si dice della Nutella vegana <span className="text-secondary">-445 lettori</span></li>
+                <li>Fotogrammi dal Lido <span className="text-secondary">-448 lettori</span> </li>
+                <li>Economia e politica a Cernobbio<span className="text-secondary">-336 lettori</span></li>
+                <li>Low cost intercontinentale per Wizz Air<span className="text-secondary"> -558 lettori</span> </li>
               </>
             )}
           </ul>
