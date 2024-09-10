@@ -1,0 +1,112 @@
+import { useState, useEffect } from "react";
+import { Card, Button} from "react-bootstrap";
+
+
+const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
+
+const JobsCard = () => {
+  const [agencies, setAgencies] = useState([]);
+  const [profiles, setProfiles] = useState([]);
+
+  // fetch del JSON delle agenzie
+  useEffect(() => {
+    const fetchAgencies = async () => {
+      try {
+        const response = await fetch("/jobs.json");
+        if (!response.ok) {
+          throw new Error("Errore nella risposta del server");
+        }
+        const data = await response.json();
+        console.log("jobs", data);
+        setAgencies(data);
+      } catch (error) {
+        console.error("Errore nel recupero dati json", error);
+      }
+    };
+
+    // Fetch persone dall'API
+    const fetchProfiles = async () => {
+      try {
+        const response = await fetch(urlAPI, {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+          },
+        });
+        const data = await response.json();
+        setProfiles(data);
+      } catch (error) {
+        console.error("Errore durante il caricamento delle persone:", error);
+      }
+    };
+
+    fetchAgencies();
+    fetchProfiles();
+  }, []);
+
+  // Selezione casuale delle agenzie
+  const getRandomAgencies = () => {
+    const shuffled = agencies.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 2); // Ritorna due agenzie casuali
+  };
+
+  // Seleziona casualmente 3 persone
+  const getRandomFollowers = () => {
+    if (profiles.length === 0) return []; // Ritorna un array vuoto se non ci sono profili
+    const shuffledProfiles = profiles.sort(() => 0.5 - Math.random());
+    return shuffledProfiles.slice(0, 3); // Prende 3 persone casuali
+  };
+
+  const selectedAgencies = getRandomAgencies();
+
+  return (
+    <div>
+      <h5>Potrebbe interessarti</h5>
+      <p>Pagine per te</p>
+      {selectedAgencies.map((agency, index) => (
+        <Card key={index} className="mb-3 p-1">
+          <Card.Body>
+            <Card.Img
+              variant="top"
+              src={agency.image}
+              style={{ width: "130px" }}
+              className="logo-advertising"
+            />
+            <Card.Title className="text-end">{agency.name}</Card.Title>
+            <Card.Text  className="text-end">{agency.description}</Card.Text>
+            <Card.Text  className="text-end">{agency.followers.toLocaleString()} follower</Card.Text>
+            <div>
+              <strong>3 collegamenti seguono questa pagina</strong>
+              {getRandomFollowers().map((person, idx) => (
+                <div key={idx} className="py-2" >
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    style={{
+                      width: "30px",
+                      borderRadius: "50%",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <span>{person.name}</span>
+                </div>
+              ))}
+            </div>
+            <Button variant="outline-secondary" 
+              className="m-2 rounded-5 border-2 text-black fw-5 w-50">+ Segui</Button>
+          </Card.Body>
+      
+        </Card>
+        
+      ))}
+          <Button
+          variant="link"
+          className="text-dark fw-bold text-decoration-none btn-all-profile border border-1 rounded-1 px-5"
+        >
+          Mostra tutto
+        </Button>
+    </div>
+  );
+};
+
+export default JobsCard;

@@ -33,6 +33,7 @@
   font-weight: 600;
 }
 
+
 .duration, .location {
   font-size: 0.9rem;
 }
@@ -45,6 +46,7 @@
   font-size: 0.9rem;
   text-decoration: none;
 }
+
 
 .see-more:hover {
   text-decoration: underline;
@@ -87,4 +89,12 @@
 
 .experience-section .show-all-experiences button span {
   margin-left: 4px;
+}
+
+.no-scroll-margin {
+  margin-top: 80px
+}
+
+.scroll-margin {
+  margin-top: 120px
 }
