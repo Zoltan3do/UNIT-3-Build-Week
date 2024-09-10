@@ -2,7 +2,7 @@ import MyNavbar from './components/Navbar/MyNavbar'
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import MainSidebar from './components/MainSidebar';
+import MyFooter from './components/myFooter'
 
 function App() {
 
