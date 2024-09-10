@@ -58,8 +58,8 @@ const AllSideProfiles = () => {
               <Card.Title style={{ fontSize: "1rem" }}>
                 {profile.name} {profile.surname}
               </Card.Title>
-              <Card.Text className="text-muted" style={{ fontSize: "0.9rem" }}>
-                {profile.title} | {profile.area}
+              <Card.Text className="text-muted " style={{ fontSize: "0.9rem" }}>
+                {profile.title} | <br />{profile.area}
               </Card.Text>
             </div>
           </Card.Body>

@@ -15,7 +15,7 @@ import TendinaTu from "./TendinaTu";
 import { useState, useEffect, Suspense } from "react";
 import "./MyNavbar.css";
 
-function MyNavbar({ onScrollChange }) {
+function MyNavbar({ onScrollChange, onUserProfileChange }) {
 
     const [userProfile, setUserProfile] = useState({});
 
@@ -59,6 +59,7 @@ function MyNavbar({ onScrollChange }) {
             if (response.ok) {
                 const userData = await response.json();
                 setUserProfile(userData);
+                onUserProfileChange(userData);
                 console.log(userData)
                 return userProfile
             }
@@ -161,7 +162,7 @@ function MyNavbar({ onScrollChange }) {
                             </Container>
                         </Navbar>
                         <Navbar
-                            className="sticky-top border border-start-0 border-end-0 second-nav w-100"
+                            className="sticky-top border border-start-0 border-end-0 second-nav w-100 mt-5 mt-xl-2"
                             id="navbar-body"
                             bg="white"
                             expand="lg"

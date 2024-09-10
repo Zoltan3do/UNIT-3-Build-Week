@@ -1,6 +1,4 @@
 
-
-
 .experience-section {
   text-align: left;
 }
@@ -92,4 +90,8 @@
 
 .scroll-margin {
   margin-top: 120px
+}
+
+.ptl-1{
+  line-height: 0.3;
 }
