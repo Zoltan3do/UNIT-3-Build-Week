@@ -37,29 +37,9 @@ main {
   background-color: rgb(233, 233, 233) !important;
   color: gray;
 }
-.cdi:hover {
-  background-color: rgb(233, 233, 233) !important;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.carousel {
-  padding: 1rem;
-
-  color: #000000;
-}
-.box {
-  height: 100%;
-}
-
-.slick-arrow {
-  border-radius: 50px;
-}
-.carousel .card {
-  min-height: 225px;
+body{
+  background-color: #f4f2ee;
 }
 .bi-pencil {
   color: black !important;

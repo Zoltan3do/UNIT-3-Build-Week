@@ -1,10 +1,11 @@
 
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const MyFooter = () => (
   <footer className="bg-light text-light py-4">
+    <Container fluid>
     <Row className="text-center">
       <Col xs={{ span: 10, offset: 1 }}>
         <Row className="row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
@@ -134,6 +135,7 @@ const MyFooter = () => (
         </Row>
       </Col>
     </Row>
+    </Container>
   </footer>
 );
 

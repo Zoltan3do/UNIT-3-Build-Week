@@ -6,7 +6,8 @@ import {
     FormControl,
     Row,
     Dropdown,
-    Button
+    Button,
+    Nav
 } from "react-bootstrap";
 import { Search, HouseDoorFill, PeopleFill, BriefcaseFill, ChatDotsFill, BellFill } from "react-bootstrap-icons";
 import TendinaTu from "./TendinaTu";
@@ -14,7 +15,7 @@ import TendinaTu from "./TendinaTu";
 import { useState, useEffect, Suspense } from "react";
 import "./MyNavbar.css";
 
-function MyNavbar({ onScrollChange }) {
+function MyNavbar({ onScrollChange, onUserProfileChange }) {
 
     const [userProfile, setUserProfile] = useState({});
 
@@ -58,6 +59,7 @@ function MyNavbar({ onScrollChange }) {
             if (response.ok) {
                 const userData = await response.json();
                 setUserProfile(userData);
+                onUserProfileChange(userData);
                 console.log(userData)
                 return userProfile
             }
@@ -71,93 +73,96 @@ function MyNavbar({ onScrollChange }) {
             <Suspense fallback={<p>Caricamento...</p>}>
                 {isScroll ? (
                     <Row className="fixed-top w-100 fs-xs">
-                        <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top">
-                            <Container className="d-flex justify-content-between align-items-center ">
-                                <Navbar.Brand href="/" >
-                                    <div style={{ width: 33 }} >
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin logo" className="w-100" />
-                                    </div>
+                        <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
+                            <Container className="d-flex justify-content-between align-items-center">
+                                <Navbar.Brand href="/">
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                        alt="linkedin logo"
+                                        style={{ width: 33 }}
+                                    />
                                 </Navbar.Brand>
 
-                                <Form className="d-none d-lg-block" style={{ marginLeft: "-150px" }}>
-                                    <Form.Group className="d-flex align-items-center">
-                                        <Search className="me-2 navbar-icon" size={20} />
-                                        <FormControl type="text" placeholder="Cerca" className="w-100 search-background " />
-                                    </Form.Group>
-                                </Form>
-
-                                <div className="d-flex align-items-center" >
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <HouseDoorFill size={20} />
-                                        <div>Home</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3  navbar-icon">
-                                        <PeopleFill size={20} />
-                                        <div>Rete</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <BriefcaseFill size={20} />
-                                        <div>Lavoro</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <ChatDotsFill size={20} />
-                                        <div>Messaggistica</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 me-5 navbar-icon">
-                                        <BellFill size={20} />
-                                        <div>Notifiche</div>
-                                    </div>
-
-                                    <Dropdown className="me-5 ">
-                                        <Dropdown.Toggle
-                                            variant="link"
-                                            className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
-                                        >
-                                            <img
-                                                className="navbar-profile-pic"
-                                                src={userProfile.image}
-                                                alt="profilo"
+                                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                                <Navbar.Collapse id="responsive-navbar-nav">
+                                    <Nav className="me-auto d-none d-md-inline">
+                                        <Form className="d-flex align-items-center">
+                                            <Search className="me-2 navbar-icon" size={20} />
+                                            <FormControl
+                                                type="text"
+                                                placeholder="Cerca"
+                                                className="me-2 search-background"
                                             />
-                                            <div className="ms-2 text-dark  navbar-icon">
-                                                Tu
-                                            </div>
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu className="custom-dropdown-menu">
-                                            <TendinaTu dati={userProfile} />
-                                        </Dropdown.Menu>
-                                    </Dropdown>
+                                        </Form>
+                                    </Nav>
 
+                                    <Nav className="ms-auto d-flex align-items-center">
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <HouseDoorFill size={20} />
+                                            <div>Home</div>
+                                        </div>
 
-                                    <div className="d-flex border border-bottom-0 border-top-0 border-end-0 ">
-                                        <Dropdown>
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <PeopleFill size={20} />
+                                            <div>Rete</div>
+                                        </div>
+
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <BriefcaseFill size={20} />
+                                            <div>Lavoro</div>
+                                        </div>
+
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <ChatDotsFill size={20} />
+                                            <div>Messaggistica</div>
+                                        </div>
+
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <BellFill size={20} />
+                                            <div>Notifiche</div>
+                                        </div>
+                                        <Dropdown className="mx-3">
                                             <Dropdown.Toggle
                                                 variant="link"
-                                                className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
+                                                className="d-flex flex-column align-items-center dropdown-toggle text-decoration-none text-dark"
                                             >
-                                                <div className="mx-2 text-dark navbar-icon">
-                                                    <i className="bi bi-grid"></i>
-                                                    <div>Per le aziende</div>
-                                                </div>
+                                                <img
+                                                    className="navbar-profile-pic"
+                                                    src={userProfile.image}
+                                                    alt="profilo"
+                                                    style={{ width: 30, borderRadius: '50%' }}
+                                                />
+                                                <span className="mt-1">Tu</span>
                                             </Dropdown.Toggle>
-                                            <Dropdown.Menu className="custom-dropdown-menu">
+                                            <Dropdown.Menu>
+                                                <TendinaTu dati={userProfile} />
                                             </Dropdown.Menu>
                                         </Dropdown>
 
-                                        <div className="navbar-icon-container text-center d-none d-lg-block mx-2 mt-2  text-decoration-underline fs-xs">
-                                            <a href="#" className="text-premium-color">Passa a Premium per 0 <br /> EUR</a>
+                                        <Dropdown className="mx-3">
+                                            <Dropdown.Toggle
+                                                variant="link"
+                                                className="d-flex flex-column align-items-center dropdown-toggle text-decoration-none text-dark"
+                                            >
+                                                <i className="bi bi-grid" style={{ fontSize: '20px' }} />
+                                                <span className="mt-1">Per le aziende</span>
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                {/* Other menu items */}
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+
+                                        <div className="text-center d-none d-lg-block">
+                                            <a href="#" className="text-premium-color text-decoration-underline">
+                                                Passa a Premium per 0<br /> EUR
+                                            </a>
                                         </div>
-                                    </div>
-
-                                </div>
-
+                                    </Nav>
+                                </Navbar.Collapse>
                             </Container>
                         </Navbar>
                         <Navbar
-                            className="sticky-top border border-start-0 border-end-0 second-nav w-100"
+                            className="sticky-top border border-start-0 border-end-0 second-nav w-100 mt-5 mt-xl-2"
                             id="navbar-body"
                             bg="white"
                             expand="lg"
@@ -202,88 +207,92 @@ function MyNavbar({ onScrollChange }) {
 
                 ) : (
                     <Row className="fixed-top w-100 fs-xs no-scroll-margin">
-                        <Navbar bg="light" variant="light" expand="lg" className="w-100 fixed-top py-2 col">
-                            <Container className="d-flex justify-content-between align-items-center ">
-                                <Navbar.Brand href="/" >
-                                    <div style={{ width: 33 }} >
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin logo" className="w-100" />
-                                    </div>
-
+                        <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
+                            <Container className="d-flex justify-content-between align-items-center">
+                                <Navbar.Brand href="/">
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                        alt="linkedin logo"
+                                        style={{ width: 33 }}
+                                    />
                                 </Navbar.Brand>
 
-                                <Form className="d-none d-lg-block" style={{ marginLeft: "-150px" }}>
-                                    <Form.Group className="d-flex align-items-center">
-                                        <Search className="me-2 navbar-icon" size={20} />
-                                        <FormControl type="text" placeholder="Cerca" className="w-100 search-background " />
-                                    </Form.Group>
-                                </Form>
-
-                                <div className="d-flex align-items-center" >
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <HouseDoorFill size={20} />
-                                        <div>Home</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <PeopleFill size={20} />
-                                        <div>Rete</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <BriefcaseFill size={20} />
-                                        <div>Lavoro</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                        <ChatDotsFill size={20} />
-                                        <div>Messaggistica</div>
-                                    </div>
-
-                                    <div className="navbar-icon-container text-center mx-3 me-5 navbar-icon">
-                                        <BellFill size={20} />
-                                        <div>Notifiche</div>
-                                    </div>
-
-                                    <Dropdown className="me-5 ">
-                                        <Dropdown.Toggle
-                                            variant="link"
-                                            className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
-                                        >
-                                            <img
-                                                className="navbar-profile-pic"
-                                                src={userProfile.image}
-                                                alt="profilo"
+                                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                                <Navbar.Collapse id="responsive-navbar-nav">
+                                    <Nav className="me-auto d-none d-md-inline">
+                                        <Form className="d-flex align-items-center">
+                                            <Search className="me-2 navbar-icon" size={20} />
+                                            <FormControl
+                                                type="text"
+                                                placeholder="Cerca"
+                                                className="me-2 search-background"
                                             />
-                                            <div className="ms-2 text-dark navbar-icon">
-                                                Tu
-                                            </div>
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu className="custom-dropdown-menu">
-                                            <TendinaTu dati={userProfile}/>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
+                                        </Form>
+                                    </Nav>
 
+                                    <Nav className="ms-auto d-flex align-items-center">
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <HouseDoorFill size={20} />
+                                            <div>Home</div>
+                                        </div>
 
-                                    <div className="d-flex border border-bottom-0 border-top-0 border-end-0 ">
-                                        <Dropdown>
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <PeopleFill size={20} />
+                                            <div>Rete</div>
+                                        </div>
+
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <BriefcaseFill size={20} />
+                                            <div>Lavoro</div>
+                                        </div>
+
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <ChatDotsFill size={20} />
+                                            <div>Messaggistica</div>
+                                        </div>
+
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                            <BellFill size={20} />
+                                            <div>Notifiche</div>
+                                        </div>
+                                        <Dropdown className="mx-3">
                                             <Dropdown.Toggle
                                                 variant="link"
-                                                className="d-flex align-items-center dropdown-toggle text-decoration-none text-dark flex-column"
+                                                className="d-flex flex-column align-items-center dropdown-toggle text-decoration-none text-dark"
                                             >
-                                                <div className="mx-2 text-dark navbar-icon">
-                                                    <i className="bi bi-grid"></i>
-                                                    <div>Per le aziende</div>
-                                                </div>
+                                                <img
+                                                    className="navbar-profile-pic"
+                                                    src={userProfile.image}
+                                                    alt="profilo"
+                                                    style={{ width: 30, borderRadius: '50%' }}
+                                                />
+                                                <span className="mt-1">Tu</span>
                                             </Dropdown.Toggle>
-                                            <Dropdown.Menu className="custom-dropdown-menu">
+                                            <Dropdown.Menu>
+                                                <TendinaTu dati={userProfile} />
                                             </Dropdown.Menu>
                                         </Dropdown>
 
-                                        <div className="navbar-icon-container text-center d-none d-lg-block mx-2 mt-2  text-decoration-underline fs-xs">
-                                            <a href="#" className="text-premium-color">Passa a Premium per 0 <br /> EUR</a>
+                                        <Dropdown className="mx-3">
+                                            <Dropdown.Toggle
+                                                variant="link"
+                                                className="d-flex flex-column align-items-center dropdown-toggle text-decoration-none text-dark"
+                                            >
+                                                <i className="bi bi-grid" style={{ fontSize: '20px' }} />
+                                                <span className="mt-1">Per le aziende</span>
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                {/* Other menu items */}
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+
+                                        <div className="text-center d-none d-lg-block">
+                                            <a href="#" className="text-premium-color text-decoration-underline">
+                                                Passa a Premium per 0<br /> EUR
+                                            </a>
                                         </div>
-                                    </div>
-                                </div>
+                                    </Nav>
+                                </Navbar.Collapse>
                             </Container>
                         </Navbar>
                     </Row>
