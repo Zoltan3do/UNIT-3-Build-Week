@@ -93,3 +93,38 @@
 .scroll-margin {
   margin-top: 120px
 }
+.bg-advertising{
+  background-image: url('https://media.licdn.com/dms/image/v2/C4D12AQHMPBvE3avWzg/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1616872522462?e=1730937600&v=beta&t=CheHhATob32yPuG-Ln-IkcP_Ldr73CAYqOXqlEbgAOQ');
+  height: 100px;
+  position: relative;
+}
+.logo-advertising{
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  z-index: 1;
+  width: 100px; 
+
+}
+.adv-badge{
+  position: absolute;
+  right: 4px;
+  top: 5px;
+}
+.jobCard {
+  position: relative;
+  padding-left: 60px; /* Aggiunge spazio per l'immagine */
+}
+
+.job-advertising {
+  width: 80px; 
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 0; /* L'immagine dietro il testo */
+}
+
+.job-title, .jobCard .text-end {
+  position: relative;
+  z-index: 1; 
+}

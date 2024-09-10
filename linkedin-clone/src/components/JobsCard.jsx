@@ -64,26 +64,27 @@ const JobsCard = () => {
       <h5>Potrebbe interessarti</h5>
       <p>Pagine per te</p>
       {selectedAgencies.map((agency, index) => (
-        <Card key={index} className="mb-3 p-1">
+        <Card key={index} className="mb-1 p-1">
           <Card.Body>
+            <div  className="jobCard">
             <Card.Img
               variant="top"
               src={agency.image}
-              style={{ width: "130px" }}
-              className="logo-advertising"
+              className="job-advertising"
             />
-            <Card.Title className="text-end">{agency.name}</Card.Title>
+            <Card.Title className="text-end job-title">{agency.name}</Card.Title>
             <Card.Text  className="text-end">{agency.description}</Card.Text>
             <Card.Text  className="text-end">{agency.followers.toLocaleString()} follower</Card.Text>
+         </div>
             <div>
               <strong>3 collegamenti seguono questa pagina</strong>
               {getRandomFollowers().map((person, idx) => (
-                <div key={idx} className="py-2" >
+                <div key={idx} className="py-1" >
                   <img
                     src={person.image}
                     alt={person.name}
                     style={{
-                      width: "30px",
+                      width: "35px",
                       borderRadius: "50%",
                       marginRight: "10px",
                     }}
@@ -92,8 +93,10 @@ const JobsCard = () => {
                 </div>
               ))}
             </div>
+            <div className="d-flex justify-content-center">
             <Button variant="outline-secondary" 
               className="m-2 rounded-5 border-2 text-black fw-5 w-50">+ Segui</Button>
+              </div>
           </Card.Body>
       
         </Card>
@@ -101,7 +104,7 @@ const JobsCard = () => {
       ))}
           <Button
           variant="link"
-          className="text-dark fw-bold text-decoration-none btn-all-profile border border-1 rounded-1 px-5"
+          className="text-dark fw-bold text-decoration-none btn-all-profile bg-light w-100"
         >
           Mostra tutto
         </Button>

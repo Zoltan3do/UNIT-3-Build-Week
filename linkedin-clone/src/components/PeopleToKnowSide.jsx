@@ -62,7 +62,7 @@ const PeopleToKnowSide = () => {
     <div className="side-profiles my-4">
       <h5 className='text-start'>Persone che potresti conoscere</h5>
       {profiles.slice(0, 5).map((profile) => (
-        <Card key={profile._id} className="mb-2 p-1">
+        <Card key={profile._id} className="mb-1 p-1">
           <Card.Body className="d-flex align-items-center">
             <img
               src={profile.image}
@@ -102,7 +102,10 @@ const PeopleToKnowSide = () => {
         </Card>
       ))}
       <div className='border border-1 rounded-2'>
-        <Button variant="link" className="text-dark fw-bold text-decoration-none btn-all-profile">
+      <Button
+          variant="link"
+          className="text-dark fw-bold text-decoration-none btn-all-profile bg-light w-100"
+        >
           Mostra tutto
         </Button>
       </div>
