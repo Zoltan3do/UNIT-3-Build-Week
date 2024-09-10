@@ -5,6 +5,8 @@ import './App.css'
 import MainSidebar from './components/MainSidebar';
 import { Col, Container, Row } from 'react-bootstrap';
 import MyFooter from './components/myFooter';
+import HomeRightSide from './components/HomeRightSide';
+
 
 
 
@@ -37,6 +39,7 @@ function App() {
     <MainSidebar/>
     </Col>
     </Row>
+    <HomeRightSide/>
     </Container>
     <MyFooter/>
     </>

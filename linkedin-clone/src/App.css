@@ -128,3 +128,15 @@
   position: relative;
   z-index: 1; 
 }
+.home-side-ul{
+ list-style-type: none;
+ padding-left: 0;
+}
+.homeSideDrop{
+  position: absolute;
+  right:1px;
+  top:0px
+}
+.homeSide{
+  position: relative;
+}
