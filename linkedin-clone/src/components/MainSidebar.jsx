@@ -1,4 +1,4 @@
-import { Row } from "react-bootstrap"
+import { Row,Col } from "react-bootstrap"
 import SidebarProfile from "./SidebarProfile"
 import AdvertisingSide from "./AdvertisingSide"
 import AllSideProfiles from "./AllSideProfiles"
@@ -8,6 +8,7 @@ import AdvImg from "./AdvImg"
 const MainSidebar = () =>{
     return(
        <Row className="flex-column">
+        <Col md={3}>
      
         <SidebarProfile/>
         <AdvertisingSide/>
@@ -15,7 +16,7 @@ const MainSidebar = () =>{
         <PeopleToKnowSide/>
         <JobsCard/>
         <AdvImg/>
-        
+        </Col>
        </Row>
     )
 }

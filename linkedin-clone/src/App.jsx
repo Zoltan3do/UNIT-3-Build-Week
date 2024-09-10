@@ -2,6 +2,7 @@ import MyNavbar from './components/Navbar/MyNavbar'
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import MainSidebar from './components/MainSidebar';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
       <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quo quasi sequi repudiandae error. Veritatis ullam at, facilis quod sint quasi omnis iusto voluptatibus facere accusamus repudiandae, soluta aspernatur temporibus?</div>
 
       {/* </div> */}
+    <MainSidebar/>
 
     </>
   )
