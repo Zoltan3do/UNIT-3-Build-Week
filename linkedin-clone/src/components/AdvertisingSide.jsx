@@ -39,7 +39,7 @@ const AdvertisingSide = () => {
 
   return (
     <Col>
-    <Card className="mb-3 p-0 rounded-2">
+    <Card className="mb-1 p-2 rounded-2">
       <div className="bg-advertising">
       <Badge bg="light" text="secondary" className="border border-1 adv-badge">
         Promosso<a href="">...</a>
@@ -49,21 +49,22 @@ const AdvertisingSide = () => {
         variant="top"
         src={randomAd.logoUrl}
         alt={randomAd.company}
-        style={{ width: "140px" }}
         className="logo-advertising"
 
       />
-      <Card.Body className="mt-2 pt-0 pb-2">
+      <Card.Body className="mt-2 pt-0 pb-2 px-0">
         <Card.Title className="text-start mb-0">{randomAd.company}</Card.Title>
         <Card.Text className="text-start mb-0">{randomAd.message}</Card.Text>
         <Card.Text className="text-start"><small className="mb-0">Rimani al corrente con news e informazioni rilevanti </small></Card.Text>
+        <div className="d-flex justify-content-center">
         <Button
-          className="adv-btn rounded-5 fw-bold"
+          className="adv-btn rounded-5 fw-bold px-3"
           variant="outline-primary"
           onClick={() => handleFollowClick(randomAd.url)} // Gestione del click
         >
           {randomAd.cta}
         </Button>
+        </div>
     
       </Card.Body>
     </Card>

@@ -5,6 +5,9 @@ import './App.css'
 import MainSidebar from './components/MainSidebar';
 import { Col, Container, Row } from 'react-bootstrap';
 import MyFooter from './components/myFooter';
+import HomeRightSide from './components/HomeRightSide';
+//import Profile from './components/Profile';
+
 import LeftSidebar from './components/LeftSidebar/LeftSidebar';
 
 
@@ -36,7 +39,7 @@ function App() {
       <Col md={6} className='flex-grow-1'>
     
       <div className={!isScrollFromChild ? "no-scroll-margin" : "scroll-margin"}>
-       {/* <Profile/>*/}
+       {/*<Profile/>*/}
       </div>
      
       </Col>
@@ -45,6 +48,7 @@ function App() {
     <MainSidebar/>
     </Col>
     </Row>
+    <HomeRightSide/>
     </Container>
     <MyFooter/>
     </>
