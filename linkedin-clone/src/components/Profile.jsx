@@ -7,6 +7,7 @@ import Analysis from './Analisys'
 import Resources from './Resources'
 import Activities from './Activities'
 import Professional from './Professional'
+import MainSidebar from './MainSidebar'
 
 
 
@@ -41,7 +42,8 @@ const Profile = () => {
             
           </Col>
           <Col xs={12} md={5} lg={4} xl={3}>
-          
+          <MainSidebar />
+
           </Col>
         </Row>
       </Container>
