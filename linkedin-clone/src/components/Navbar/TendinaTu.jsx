@@ -1,17 +1,17 @@
 import { ListGroup, Button } from "react-bootstrap";
 import "./TendinaTu.css"
 
-function TendinaTu() {
+function TendinaTu({ dati }) {
     return (
         <ListGroup className="custom-list-group">
             <ListGroup.Item className="custom-list-group-item">
                 <div className="d-flex align-items-center">
-                    <div className="profile-pic-container">
-                        <img src="../assets/imgs/default-profile-pic.png" alt="profile" className="profile-pic" />
+                    <div className="profile-pic-container" style={{width:"16%"}}>
+                        <img src={dati.image} alt="profile" className="profile-pic w-100" />
                     </div>
-                    <div className="ms-3">
-                        <h5>Nome Cognome</h5>
-                        <p>descrizione</p>
+                    <div className="ms-3 no-space">
+                        <h5>{dati.name} {dati.surname}</h5>
+                        <p>{dati.bio}</p>
                     </div>
                 </div>
                 <div>

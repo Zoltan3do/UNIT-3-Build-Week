@@ -7,3 +7,9 @@
 .overLink:hover {
     text-decoration: underline;
 }
+
+
+.no-space{
+    line-height: 1 !important;
+    vertical-align: middle;
+}
