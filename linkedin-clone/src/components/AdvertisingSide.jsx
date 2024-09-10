@@ -64,6 +64,7 @@ const AdvertisingSide = () => {
         >
           {randomAd.cta}
         </Button>
+    
       </Card.Body>
     </Card>
     </Col>
