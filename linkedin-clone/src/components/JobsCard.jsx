@@ -78,20 +78,27 @@ const JobsCard = () => {
          </div>
             <div>
               <strong>3 collegamenti seguono questa pagina</strong>
+              <div className="d-flex justify-content-center">
               {getRandomFollowers().map((person, idx) => (
                 <div key={idx} className="py-1" >
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    style={{
+                  <div className="overflow-hidden" style={{
+                    height:"35px",
                       width: "35px",
                       borderRadius: "50%",
                       marginRight: "10px",
-                    }}
+                    
+                    }}>
+                  <img
+                  className="w-100"
+                    src={person.image}
+                    alt={person.name}
+                 
                   />
-                  <span>{person.name}</span>
+                  </div>
+                 
                 </div>
               ))}
+              </div>
             </div>
             <div className="d-flex justify-content-center">
             <Button variant="outline-secondary" 
