@@ -140,3 +140,6 @@
 .homeSide{
   position: relative;
 }
+.home-side-ul li{
+  margin-bottom:10px;
+}

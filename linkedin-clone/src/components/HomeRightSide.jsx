@@ -37,17 +37,17 @@ const HomeRightSide = () => {
          
           <Card.Text className="fw-bold text-secondary">Storie principali</Card.Text>
           <ul className="home-side-ul fw-bold">
-            <li>I migliori MBA per dare slancio alla tua carriera <span className="text-secondary">-14,701 lettori</span></li>
-            <li>Allenare il pensiero strategico <span className="text-secondary">-2,089 lettori</span> </li>
-            <li>I lavori più richiesti nei prossimi 5 anni <span className="text-secondary"> -915 lettori</span></li>
-            <li>Se AI sale in cattedra<span className="text-secondary">-2,500 lettori</span> </li>
-            <li>Arriva il Voucher 3I per l'innovazione <span className="text-secondary"> -905 lettori</span></li>
+            <li>I migliori MBA per dare slancio alla tua carriera <small className="text-secondary">-14,701 lettori</small></li>
+            <li>Allenare il pensiero strategico <small className="text-secondary">-2,089 lettori</small> </li>
+            <li>I lavori più richiesti nei prossimi 5 anni <small className="text-secondary"> -915 lettori</small></li>
+            <li>Se AI sale in cattedra<small className="text-secondary">-2,500 lettori</small> </li>
+            <li>Arriva il Voucher 3I per l'innovazione <small className="text-secondary"> -905 lettori</small></li>
             {showMore && (
               <>
-                <li>Che si dice della Nutella vegana <span className="text-secondary">-445 lettori</span></li>
-                <li>Fotogrammi dal Lido <span className="text-secondary">-448 lettori</span> </li>
-                <li>Economia e politica a Cernobbio<span className="text-secondary">-336 lettori</span></li>
-                <li>Low cost intercontinentale per Wizz Air<span className="text-secondary"> -558 lettori</span> </li>
+                <li>Che si dice della Nutella vegana <small className="text-secondary">-445 lettori</small></li>
+                <li>Fotogrammi dal Lido <small className="text-secondary">-448 lettori</small> </li>
+                <li>Economia e politica a Cernobbio<small className="text-secondary">-336 lettori</small></li>
+                <li>Low cost intercontinentale per Wizz Air<small className="text-secondary"> -558 lettori</small> </li>
               </>
             )}
           </ul>
@@ -115,7 +115,9 @@ const HomeRightSide = () => {
             
           </div>
           <p className="text-secondary">Find a job at a company that needs your help.</p>
+          <div className="d-flex justify-content-center">
           <Button variant="outline-primary rounded-5">Search jobs</Button>
+          </div>
         </Card.Body>
       </Card>
     </Col>
