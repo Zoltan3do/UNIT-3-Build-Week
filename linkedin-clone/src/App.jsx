@@ -15,6 +15,7 @@ import MyFooter from "./components/myFooter";
 
 
 
+
 // Funzione che riceve lo stato dal figlio
 
 
