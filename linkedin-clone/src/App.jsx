@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
-import MyFooter from "./components/myFooter";
+import MyFooter from "./components/MyFooter";
 
 
 const App = () => {
@@ -41,10 +41,9 @@ const App = () => {
         />
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
-        }>
-
-        </Route>
+        } />
       </Routes>
+      <MyFooter />
     </BrowserRouter>
   );
 };

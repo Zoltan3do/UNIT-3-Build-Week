@@ -1,7 +1,5 @@
 import { Row, Col, Container, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./FooterHome.css";
 
 const FooterHome = () => (
