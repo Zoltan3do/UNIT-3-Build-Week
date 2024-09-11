@@ -6,36 +6,36 @@ import "./MyFooter.css";
 const MyFooter = () => (
   <footer className="footix text-light py-4">
     <Container fluid>
-    <Row className="text-center">
-      <Col xs={{ span: 10, offset: 1 }}>
-        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-          <Col>
-            <p className="mb-2">
-              <a href="https://about.linkedin.com/it-it" className="text-muted text-decoration-none">
-                Informazioni
-              </a>
-            </p>
-            <p className="mb-2">
-              <a href="https://it.linkedin.com/legal/professional-community-policies?" className="text-muted text-decoration-none">
-                Informativa sulla community professionale
-              </a>
-            </p>
-            <p className="mb-2">
-              <a href="/" className="text-muted text-decoration-none">
-                Privacy e condizioni
-              </a>
-            </p>
-            <p className="mb-2">
-              <a href="https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer" className="text-muted text-decoration-none">
-                Sales Solutions
-              </a>
-            </p>
-            <p className="mb-2">
-              <a href="/" className="text-muted text-decoration-none">
-                Centro sicurezza
-              </a>
-            </p>
-          </Col>
+      <Row className="text-center">
+        <Col xs={{ span: 10, offset: 1 }}>
+          <Row className="row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+            <Col>
+              <p className="mb-2">
+                <a href="https://about.linkedin.com/it-it" className="text-muted text-decoration-none">
+                  Informazioni
+                </a>
+              </p>
+              <p className="mb-2">
+                <a href="https://it.linkedin.com/legal/professional-community-policies?" className="text-muted text-decoration-none">
+                  Informativa sulla community professionale
+                </a>
+              </p>
+              <p className="mb-2">
+                <a href="/" className="text-muted text-decoration-none">
+                  Privacy e condizioni
+                </a>
+              </p>
+              <p className="mb-2">
+                <a href="https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer" className="text-muted text-decoration-none">
+                  Sales Solutions
+                </a>
+              </p>
+              <p className="mb-2">
+                <a href="/" className="text-muted text-decoration-none">
+                  Centro sicurezza
+                </a>
+              </p>
+            </Col>
 
             <Col>
               <p className="mb-2">
@@ -85,9 +85,9 @@ const MyFooter = () => (
 
             <Col>
               <p className="mb-2 text-start">
-              <QuestionCircleFill size={20} className="me-2 text-dark" /> 
+                <QuestionCircleFill size={20} className="me-2 text-dark" />
                 <strong className="text-secondary">Domande?</strong>
-                <br/>
+                <br />
                 <a href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_search_srp_all" className="text-muted text-decoration-none">
                   Visita il nostro Centro assistenza
                 </a>
@@ -95,15 +95,15 @@ const MyFooter = () => (
               <p className="mb-2 text-start">
                 <GearFill size={20} className="me-2 text-dark" />
                 <strong className="text-secondary">Gestisci il tuo account e la tua privacy</strong>
-                <br/>
+                <br />
                 <a href="https://www.linkedin.com/mypreferences/d/categories/account" className="text-muted text-decoration-none">
                   Vai alle impostazioni
                 </a>
               </p>
-              <p className="mb-2 text-start">  
-              <ShieldFill size={20} className="me-2 text-dark" /> 
-              <strong className="text-secondary">Trasparenza sui contenuti consigliati</strong>
-                <br/>
+              <p className="mb-2 text-start">
+                <ShieldFill size={20} className="me-2 text-dark" />
+                <strong className="text-secondary">Trasparenza sui contenuti consigliati</strong>
+                <br />
                 <a href="https://www.linkedin.com/help/linkedin/answer/a1339724" className="text-muted text-decoration-none">
                   Scopri di più sui contenuti consigliati
                 </a>
@@ -113,7 +113,7 @@ const MyFooter = () => (
             <Col className="d-flex justify-content-start">
               <div className="dropdown">
                 <button
-                  className="btn bg-light btn-sm dropdown-toggle"
+                  className="btn dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton"
                   data-bs-toggle="dropdown"
@@ -121,7 +121,7 @@ const MyFooter = () => (
                 >
                   Seleziona Lingua
                 </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <ul className="dropdown-menu text-dark" aria-labelledby="dropdownMenuButton">
                   <li><a className="dropdown-item" href="#">Italiano</a></li>
                   <li><a className="dropdown-item" href="#">Inglese</a></li>
                   <li><a className="dropdown-item" href="#">Spagnolo</a></li>
@@ -134,13 +134,13 @@ const MyFooter = () => (
             </Col>
           </Row>
 
-        <Row>
-          <Col xs={12} className="text-start mt-3" style={{ fontSize: "0.85rem" }}>
-            LinkedIn Corporation © {new Date().getFullYear()}
-          </Col>
-        </Row>
-      </Col>
-    </Row>
+          <Row>
+            <Col xs={12} className="text-start mt-3" style={{ fontSize: "0.85rem" }}>
+              LinkedIn Corporation © {new Date().getFullYear()}
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </Container>
   </footer>
 );
