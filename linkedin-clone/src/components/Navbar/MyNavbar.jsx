@@ -60,7 +60,6 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
                 const userData = await response.json();
                 setUserProfile(userData);
                 onUserProfileChange(userData);
-                console.log(userData)
                 return userProfile
             }
         } catch (error) {

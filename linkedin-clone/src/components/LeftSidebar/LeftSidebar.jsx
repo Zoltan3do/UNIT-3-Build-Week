@@ -3,12 +3,10 @@ import { Card, ListGroup, Col, Row } from "react-bootstrap";
 import { BsBookmarkFill } from "react-icons/bs";
 import "./leftSidebar.css";
 
-
-
 const LeftSidebar = ({ userProfile }) => {
     return (
         <>
-            <Row style={{ width: "18rem", marginLeft: "0px", marginTop: "100px" }}>
+            <Row style={{ marginLeft: "0px", marginTop: "100px" }}>
                 <Card>
                     <Card.Header className="text-center" style={{ height: "3rem" }}>
                         <img
