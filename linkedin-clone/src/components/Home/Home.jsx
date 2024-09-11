@@ -14,10 +14,11 @@ function Home({ userProfile }) {
                     <LeftSidebar userProfile={userProfile}></LeftSidebar>
                 </Col>
                 <Col md={6} sm={12}>
-                    <div style={{marginTop:"100px"}}>
+                    <div style={{ marginTop: "100px" }}>
+                        <HomeCreatePost />
                         <AllPosts ></AllPosts>
                     </div>
-                <HomeCreatePost/>
+
                 </Col>
                 <Col md={3} sm={12}>
                     <HomeRightSide></HomeRightSide>

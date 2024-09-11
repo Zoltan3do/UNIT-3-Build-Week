@@ -38,7 +38,6 @@ const App = () => {
             <main >
               <Profile />
               <MyFooter />
-              <MyFooter />
             </main>
           }
         />
@@ -46,7 +45,7 @@ const App = () => {
           <Home userProfile={onUserChange} ></Home>
         } />
       </Routes>
-    
+
     </BrowserRouter>
   );
 };
