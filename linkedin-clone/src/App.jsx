@@ -12,7 +12,7 @@ import "./App.css";
 import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
-import HomeRightSide from "./components/HomeRightSide";
+
 
 
 
@@ -44,7 +44,6 @@ const App = () => {
           }
         />
       </Routes>
-      <HomeRightSide/>
     </BrowserRouter>
   );
 };
