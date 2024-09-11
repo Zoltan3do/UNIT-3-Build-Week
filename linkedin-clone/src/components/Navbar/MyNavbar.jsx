@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { Search, HouseDoorFill, PeopleFill, BriefcaseFill, ChatDotsFill, BellFill } from "react-bootstrap-icons";
 import TendinaTu from "./TendinaTu";
-// import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState, useEffect, Suspense } from "react";
 import "./MyNavbar.css";
 
@@ -97,10 +97,10 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
                                     </Nav>
 
                                     <Nav className="ms-auto d-flex align-items-center">
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon" to="/home">
                                             <HouseDoorFill size={20} />
                                             <div>Home</div>
-                                        </div>
+                                        </Link>
 
                                         <div className="navbar-icon-container text-center mx-3 navbar-icon">
                                             <PeopleFill size={20} />

@@ -7,7 +7,7 @@ import "./leftSidebar.css";
 const LeftSidebar = ({ userProfile }) => {
     return (
         <>
-            <Row style={{ width: "18rem", marginLeft: "0px", marginTop: "150px" }}>
+            <Row style={{ width: "18rem", marginLeft: "0px", marginTop: "100px" }}>
                 <Card>
                     <Card.Header className="text-center" style={{ height: "3rem" }}>
                         <img
