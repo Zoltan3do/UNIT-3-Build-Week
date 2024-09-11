@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Home from "./components/Home/Home";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 
 
 import Profile from "./components/Profile";
@@ -36,6 +37,7 @@ const App = () => {
           element={
             <main >
               <Profile />
+              <MyFooter />
               <MyFooter />
             </main>
           }

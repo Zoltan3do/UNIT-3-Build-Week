@@ -4,18 +4,20 @@ import HomeRightSide from "../HomeRightSide.jsx"
 import LeftSidebar from "../LeftSidebar/LeftSidebar.jsx"
 import { Container, Row, Col } from "react-bootstrap";
 import AllPosts from "./AllPosts.jsx";
+import HomeCreatePost from "../HomeCreatePost.jsx";
 
 function Home({ userProfile }) {
     return (
         <Container>
             <Row>
-                <Col md={2} sm={12}>
+                <Col md={3} sm={12}>
                     <LeftSidebar userProfile={userProfile}></LeftSidebar>
                 </Col>
-                <Col md={7} sm={12}>
+                <Col md={6} sm={12}>
                     <div style={{marginTop:"100px"}}>
                         <AllPosts ></AllPosts>
                     </div>
+                <HomeCreatePost/>
                 </Col>
                 <Col md={3} sm={12}>
                     <HomeRightSide></HomeRightSide>
