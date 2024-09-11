@@ -3,6 +3,7 @@ import { Col, Card, Button, Dropdown } from "react-bootstrap";
 import { HiMiniInformationCircle } from "react-icons/hi2";
 import { FaFantasyFlightGames } from "react-icons/fa6";
 import { IoBagCheck } from "react-icons/io5";
+import FooterHome from "./FooterHome";
 
 const HomeRightSide = () => {
   const [userData, setUserData] = useState(null);
@@ -27,7 +28,7 @@ const HomeRightSide = () => {
   }, []);
 
   return (
-    <Col md={3} className="d-flex flex-column">
+    <Col className="d-flex flex-column" style={{marginTop:"100px"}}>
       <Card className="mb-3">
         <Card.Body>
             <div className="d-flex justify-content-between">
@@ -120,6 +121,7 @@ const HomeRightSide = () => {
           </div>
         </Card.Body>
       </Card>
+      <FooterHome />
     </Col>
   );
 };
