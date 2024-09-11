@@ -1,6 +1,5 @@
 import { GearFill, QuestionCircleFill, ShieldFill } from 'react-bootstrap-icons';
 import { Row, Col, Container } from "react-bootstrap";
-import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MyFooter.css";
 

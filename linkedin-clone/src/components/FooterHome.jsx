@@ -23,7 +23,7 @@ const FooterHome = () => (
                 <Dropdown.Menu>
                   <Dropdown.Item href="https://www.linkedin.com/legal/privacy-policy">Informativa sulla privacy</Dropdown.Item>
                   <Dropdown.Item href="https://www.linkedin.com/legal/cookie-policy">Politica sui cookie</Dropdown.Item>
-                  <Dropdown.Item href="https://www.linkedin.com/legal/user-agreement">Condizioni d'uso</Dropdown.Item>
+                  <Dropdown.Item href="https://www.linkedin.com/legal/user-agreement">Condizioni d&apos;uso</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </li>
@@ -39,7 +39,7 @@ const FooterHome = () => (
         <Col md={6} className="mb-2">
           <ul className="list-unstyled">
             <li><a href="https://www.linkedin.com/advertising" className="text-muted text-decoration-none">Pubblicità</a></li>
-            <li><a href="/" className="text-muted text-decoration-none">Scarica l'app LinkedIn</a></li>
+            <li><a href="/" className="text-muted text-decoration-none">Scarica l&apos;app LinkedIn</a></li>
           </ul>
         </Col>
         <Col md={6} className="mb-2">

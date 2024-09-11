@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Card, ListGroup, Col, Row } from "react-bootstrap";
 import { BsBookmarkFill } from "react-icons/bs";
 import "./leftSidebar.css";

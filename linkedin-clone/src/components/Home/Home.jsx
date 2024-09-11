@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./home.css";
 import HomeRightSide from "../HomeRightSide.jsx"
 import LeftSidebar from "../LeftSidebar/LeftSidebar.jsx"
