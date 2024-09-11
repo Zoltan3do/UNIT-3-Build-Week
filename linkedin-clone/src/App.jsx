@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
+import MyFooter from "./components/myFooter";
 
 
 
@@ -38,7 +39,9 @@ const App = () => {
               <main>
                 <Profile />
               </main>
+              <MyFooter/>
             </>
+
           }
         />
       </Routes>

@@ -1,11 +1,11 @@
-
+import { GearFill, QuestionCircleFill, ShieldFill } from 'react-bootstrap-icons';
 import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./MyFooter.css";
 
 const MyFooter = () => (
-  <footer className="bg-light text-light py-4">
+  <footer className="footix text-light py-4">
     <Container fluid>
     <Row className="text-center">
       <Col xs={{ span: 10, offset: 1 }}>
@@ -85,20 +85,26 @@ const MyFooter = () => (
             </Col>
 
             <Col>
-              <p className="mb-2">
+              <p className="mb-2 text-start">
+              <QuestionCircleFill size={20} className="me-2 text-dark" /> 
                 <strong className="text-secondary">Domande?</strong>
+                <br/>
                 <a href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_search_srp_all" className="text-muted text-decoration-none">
                   Visita il nostro Centro assistenza
                 </a>
               </p>
-              <p className="mb-2">
+              <p className="mb-2 text-start">
+                <GearFill size={20} className="me-2 text-dark" />
                 <strong className="text-secondary">Gestisci il tuo account e la tua privacy</strong>
+                <br/>
                 <a href="https://www.linkedin.com/mypreferences/d/categories/account" className="text-muted text-decoration-none">
                   Vai alle impostazioni
                 </a>
               </p>
-              <p className="mb-2">
-                <strong className="text-secondary">Trasparenza sui contenuti consigliati</strong>
+              <p className="mb-2 text-start">  
+              <ShieldFill size={20} className="me-2 text-dark" /> 
+              <strong className="text-secondary">Trasparenza sui contenuti consigliati</strong>
+                <br/>
                 <a href="https://www.linkedin.com/help/linkedin/answer/a1339724" className="text-muted text-decoration-none">
                   Scopri di più sui contenuti consigliati
                 </a>
@@ -108,7 +114,7 @@ const MyFooter = () => (
             <Col className="d-flex justify-content-start">
               <div className="dropdown">
                 <button
-                  className="btn btn-outline-secondary btn-sm dropdown-toggle"
+                  className="btn bg-light btn-sm dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton"
                   data-bs-toggle="dropdown"
