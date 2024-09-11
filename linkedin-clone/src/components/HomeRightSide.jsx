@@ -28,7 +28,7 @@ const HomeRightSide = () => {
   }, []);
 
   return (
-    <Col md={3} className="d-flex flex-column">
+    <Col className="d-flex flex-column" style={{marginTop:"100px"}}>
       <Card className="mb-3">
         <Card.Body>
             <div className="d-flex justify-content-between">
