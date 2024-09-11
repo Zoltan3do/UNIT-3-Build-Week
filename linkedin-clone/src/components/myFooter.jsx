@@ -5,38 +5,38 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./MyFooter.css";
 
 const MyFooter = () => (
-  <footer className="footix text-light py-4">
+  <footer className="bg-light text-light py-4">
     <Container fluid>
-      <Row className="text-center">
-        <Col xs={{ span: 10, offset: 1 }}>
-          <Row className="row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-            <Col>
-              <p className="mb-2">
-                <a href="https://about.linkedin.com/it-it" className="text-muted text-decoration-none">
-                  Informazioni
-                </a>
-              </p>
-              <p className="mb-2">
-                <a href="https://it.linkedin.com/legal/professional-community-policies?" className="text-muted text-decoration-none">
-                  Informativa sulla community professionale
-                </a>
-              </p>
-              <p className="mb-2">
-                <a href="/" className="text-muted text-decoration-none">
-                  Privacy e condizioni
-                </a>
-              </p>
-              <p className="mb-2">
-                <a href="https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer" className="text-muted text-decoration-none">
-                  Sales Solutions
-                </a>
-              </p>
-              <p className="mb-2">
-                <a href="/" className="text-muted text-decoration-none">
-                  Centro sicurezza
-                </a>
-              </p>
-            </Col>
+    <Row className="text-center">
+      <Col xs={{ span: 10, offset: 1 }}>
+        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+          <Col>
+            <p className="mb-2">
+              <a href="https://about.linkedin.com/it-it" className="text-muted text-decoration-none">
+                Informazioni
+              </a>
+            </p>
+            <p className="mb-2">
+              <a href="https://it.linkedin.com/legal/professional-community-policies?" className="text-muted text-decoration-none">
+                Informativa sulla community professionale
+              </a>
+            </p>
+            <p className="mb-2">
+              <a href="/" className="text-muted text-decoration-none">
+                Privacy e condizioni
+              </a>
+            </p>
+            <p className="mb-2">
+              <a href="https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer" className="text-muted text-decoration-none">
+                Sales Solutions
+              </a>
+            </p>
+            <p className="mb-2">
+              <a href="/" className="text-muted text-decoration-none">
+                Centro sicurezza
+              </a>
+            </p>
+          </Col>
 
             <Col>
               <p className="mb-2">
@@ -129,13 +129,13 @@ const MyFooter = () => (
             </Col>
           </Row>
 
-          <Row>
-            <Col xs={12} className="text-start mt-3" style={{ fontSize: "0.85rem" }}>
-              LinkedIn Corporation © {new Date().getFullYear()}
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+        <Row>
+          <Col xs={12} className="text-start mt-3" style={{ fontSize: "0.85rem" }}>
+            LinkedIn Corporation © {new Date().getFullYear()}
+          </Col>
+        </Row>
+      </Col>
+    </Row>
     </Container>
   </footer>
 );

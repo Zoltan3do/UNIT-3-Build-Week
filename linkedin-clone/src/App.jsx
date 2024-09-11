@@ -1,19 +1,27 @@
-import MyNavbar from './components/Navbar/MyNavbar';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
+
+// Import del componente Profile e MyNavbar
+import Profile from "./components/Profile";
+import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import Profile from './components/Profile'; 
-import MyFooter from './components/MyFooter';
 
-function App() {
+
+
+// Funzione che riceve lo stato dal figlio
+
+
+const App = () => {
   const [isScrollFromChild, setIsScrollFromChild] = useState(false);
-
-  // Funzione che riceve lo stato dal figlio
   const handleScrollChange = (newScrollState) => {
     setIsScrollFromChild(newScrollState);
   };
-
   return (
     <BrowserRouter>
       <Routes>
@@ -21,22 +29,21 @@ function App() {
           path="/"
           element={
             <>
+              {/* <div className='animate__animated animate__hinge'> */}
+
               <header>
                 <MyNavbar onScrollChange={handleScrollChange} />
-                <div className={!isScrollFromChild ? "no-scroll-margin" : "scroll-margin"}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quo quasi sequi repudiandae error. Veritatis ullam at, facilis quod sint quasi omnis iusto voluptatibus facere accusamus repudiandae, soluta aspernatur temporibus?
-                </div>
+                <div className={!isScrollFromChild ? "no-scroll-margin" : "scroll-margin"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quo quasi sequi repudiandae error. Veritatis ullam at, facilis quod sint quasi omnis iusto voluptatibus facere accusamus repudiandae, soluta aspernatur temporibus?</div>
               </header>
               <main>
-                <Profile /> 
+                <Profile />
               </main>
-              <MyFooter />
             </>
           }
         />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { ListGroup, Button } from "react-bootstrap";
 import "./TendinaTu.css"
 

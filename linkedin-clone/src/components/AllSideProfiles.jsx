@@ -46,7 +46,7 @@ const AllSideProfiles = () => {
     <div className="side-profiles">
       <h5 className="mt-3 text-start">Altri profili per te</h5>
       {profiles.slice(55, 60).map((profile) => (
-        <Card key={profile._id} className="mb-2 p-1">
+        <Card key={profile._id} className="mb-1 p-1">
           <Card.Body className="d-flex align-items-center">
             <img
               src={profile.image}
@@ -58,8 +58,8 @@ const AllSideProfiles = () => {
               <Card.Title style={{ fontSize: "1rem" }}>
                 {profile.name} {profile.surname}
               </Card.Title>
-              <Card.Text className="text-muted" style={{ fontSize: "0.9rem" }}>
-                {profile.title} | {profile.area}
+              <Card.Text className="text-muted " style={{ fontSize: "0.9rem" }}>
+                {profile.title} | <br />{profile.area}
               </Card.Text>
             </div>
           </Card.Body>
@@ -76,7 +76,7 @@ const AllSideProfiles = () => {
       <div className="border border-1 rounded-2">
         <Button
           variant="link"
-          className="text-dark fw-bold text-decoration-none btn-all-profile"
+          className="text-dark fw-bold text-decoration-none btn-all-profile bg-light w-100"
         >
           Mostra tutto
         </Button>
