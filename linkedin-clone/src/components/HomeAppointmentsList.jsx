@@ -1,9 +1,10 @@
 import { Card, Button } from 'react-bootstrap';
+import { BsTrash3 } from "react-icons/bs";
 
 const HomeAppointmentsList = ({ appointments = [], deleteAppointment }) => {
     return (
         <div className="mt-4">
-            <h3>I tuoi impegni</h3>
+            <h3 className='text-primary'>I tuoi impegni</h3>
 
             {appointments.length === 0 ? (
                 <p>Non ci sono impegni.</p>
@@ -24,7 +25,7 @@ const HomeAppointmentsList = ({ appointments = [], deleteAppointment }) => {
                                     variant="outline-danger"
                                     onClick={() => deleteAppointment(index)}
                                 >
-                                    Elimina
+                                   <BsTrash3 />
                                 </Button>
                             </Card.Body>
                         </Card>
@@ -36,4 +37,5 @@ const HomeAppointmentsList = ({ appointments = [], deleteAppointment }) => {
 };
 
 export default HomeAppointmentsList;
+
 
