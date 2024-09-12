@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState, Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SingleJob from "./SingleJob";
