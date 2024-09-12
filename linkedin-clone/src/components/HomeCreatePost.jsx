@@ -5,12 +5,16 @@ import { createHomePost, fetchUserProfile, deleteHomePost } from '../redux/actio
 import { FaCalendarDays } from "react-icons/fa6";
 import { RiArticleFill } from "react-icons/ri";
 import { FaSmile, FaImage, FaCalendarAlt, FaCog, FaPlus } from 'react-icons/fa';
+import HomeCalendarEventModal from './HomeCalendarEventModal'; 
+
 
 const HomeCreatePost = () => {
     const [showHomeModal, setShowHomeModal] = useState(false);
+    const [showCalendarModal, setShowCalendarModal] = useState(false); // gestire il modale del calendario
     const [postHomeContent, setPostHomeContent] = useState('');
     const [alertMessage, setAlertMessage] = useState(null);
     const [alertVariant, setAlertVariant] = useState('');
+   // const [appointments, setAppointments] = useState([]); // Stato per gli appuntamenti
 
     // Recupera user e homeposts dallo store Redux
     const user = useSelector((state) => state.user.user);
@@ -37,6 +41,25 @@ const HomeCreatePost = () => {
         }
     };
 
+    // Funzione per creare un nuovo evento
+    const handleCreateEvent = (eventDetails) => {
+        if (eventDetails.eventName && eventDetails.startDate && eventDetails.startTime) {
+            // Aggiunge il nuovo evento alla lista degli appuntamenti
+           // setAppointments([...appointments, eventDetails]);
+            setAlertMessage('Evento creato con successo!');
+            setAlertVariant('success');
+        } else {
+            setAlertMessage('Tutti i campi obbligatori devono essere compilati.');
+            setAlertVariant('danger');
+        }
+    };
+
+    // Funzione per cancellare un appuntamento
+   // const deleteAppointment = (index) => {
+       // const updatedAppointments = appointments.filter((_, i) => i !== index);
+        //setAppointments(updatedAppointments);
+   // };
+
     // Cancella il post
     const handleDeletePost = (postId) => {
         dispatch(deleteHomePost(postId));
@@ -61,7 +84,7 @@ const HomeCreatePost = () => {
                     ) : (
                         <div className="rounded-circle bg-secondary me-2" style={{ width: '40px', height: '40px' }}></div>
                     )}
-                    <Button variant="light" onClick={() => setShowHomeModal(true)} className="w-100 text-start rounded-5">
+                    <Button variant="light" onClick={() => setShowHomeModal(true)} className="w-100 text-start rounded-5 border border-2 py-2">
                         Crea un post
                     </Button>
                 </div>
@@ -69,7 +92,11 @@ const HomeCreatePost = () => {
                     <Button variant="outline-secondary" className='border border-0 text-black'>
                         <i className="bi bi-image text-primary"></i> Contenuti multimediali
                     </Button>
-                    <Button variant="outline-secondary" className='d-flex align-items-center border border-0 text-black'>
+                    <Button 
+                        variant="outline-secondary" 
+                        className='d-flex align-items-center border border-0 text-black' 
+                        onClick={() => setShowCalendarModal(true)}  // Open calendar modal
+                    >
                         <FaCalendarDays className='calendar-icon-home me-1' /> Evento
                     </Button>
                     <Button variant="outline-secondary" className='d-flex align-items-center border border-0 text-black'>
@@ -133,9 +160,15 @@ const HomeCreatePost = () => {
                 </Modal.Footer>
             </Modal>
 
+            {/* Mount the CalendarEventModal */}
+            <HomeCalendarEventModal
+                show={showCalendarModal}
+                handleClose={() => setShowCalendarModal(false)}
+                handleCreateEvent={handleCreateEvent}  // Pass the event creation handler
+            />
+
             {/* Mostra i post creati */}
             <div className="mt-4">
-
                 {posts.map((post) => (
                     <Card key={post._id} className="mb-3">
                         <Card.Body className="d-flex justify-content-between align-items-center">
@@ -153,10 +186,11 @@ const HomeCreatePost = () => {
                     </Card>
                 ))}
             </div>
+
+            {/* Pass the appointments to HomeAppointmentsList */}
+            {/*<HomeAppointmentsList appointments={appointments} deleteAppointment={deleteAppointment} />*/}
         </div>
     );
 };
 
 export default HomeCreatePost;
-
-

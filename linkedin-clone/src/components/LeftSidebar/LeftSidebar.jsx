@@ -2,8 +2,28 @@
 import { Card, ListGroup, Col, Row } from "react-bootstrap";
 import { BsBookmarkFill } from "react-icons/bs";
 import "./leftSidebar.css";
+import HomeAppointmentsList from "../HomeAppointmentsList";
+import { useState } from "react";
+
 
 const LeftSidebar = ({ userProfile }) => {
+
+    const [appointments, setAppointments] = useState([]); // Stato per gli appuntamenti
+
+   // Funzione per creare un nuovo evento
+   const handleCreateEvent = (eventDetails) => {
+    if (eventDetails.eventName && eventDetails.startDate && eventDetails.startTime) {
+        // Aggiunge il nuovo evento alla lista degli appuntamenti
+        setAppointments([...appointments, eventDetails]);
+    }
+};
+
+        // Funzione per cancellare un appuntamento
+        const deleteAppointment = (index) => {
+            const updatedAppointments = appointments.filter((_, i) => i !== index);
+            setAppointments(updatedAppointments);
+        };
+
     return (
         <>
             <Row style={{ marginLeft: "0px", marginTop: "100px" }}>
@@ -12,7 +32,7 @@ const LeftSidebar = ({ userProfile }) => {
                         <img
                             className="profile-image-posts"
                             src={userProfile?.image}
-                            alt=""
+                            alt="Profile image"
                         />
                     </Card.Header>
                     <Card.Title className="text-center mt-5">
@@ -54,6 +74,9 @@ const LeftSidebar = ({ userProfile }) => {
                             <p className="pl-2 fw-semibold">Elementi salvati</p>
                         </div>
                     </ListGroup>
+                    <ListGroup>
+                    <HomeAppointmentsList appointments={appointments} deleteAppointment={deleteAppointment} />
+                        </ListGroup>                    
                 </Card>
                 <Card
                     id="right-sidebar__right"
