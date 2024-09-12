@@ -15,13 +15,15 @@ const LeftSidebar = ({ userProfile }) => {
                             className="profile-image-posts"
                             src={userProfile?.image}
                             alt="Profile image"
+                            src={userProfile.image}
+                            alt=""
                         />
                     </Card.Header>
                     <Card.Title className="text-center mt-5">
-                        {userProfile?.name} {userProfile?.surname}
+                        {userProfile.name} {userProfile.surname}
                     </Card.Title>
                     <Card.Text className="text-secondary text-center">
-                        <p>{userProfile?.bio}</p>
+                        <p>{userProfile.bio}</p>
                     </Card.Text>
                     <ListGroup variant="flush" className="d-flex py-3">
                         <div className="d-flex align-items-center">

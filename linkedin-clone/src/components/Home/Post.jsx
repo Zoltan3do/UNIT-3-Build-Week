@@ -26,26 +26,26 @@ const Post = ({
     return (
         <>
             <Card
-                style={{ borderRadius: "7px"}}
+                style={{ borderRadius: "7px" }}
                 className="mb-2 "
             >
                 <Card.Body>
-                    <div className="d-flex flex-row">
+                    <div className="d-flex flex-row ">
                         <Image
                             style={{ width: "60px", borderRadius: "50%" }}
                             src={pathname === "/home" ? post.user.image : image}
-                            alt="profile picture of"
+                            alt="profile picture of" className="me-3"
                         />
 
-                        <span className="d-flex flex-column ml-3">
+                        <span className="d-flex flex-column">
                             <Link
                                 to={
                                     pathname === "/home"
                                         ? `/profile/${post.user._id}`
                                         : `/profile/${id}`
-                                }
+                                } className="text-decoration-none"
                             >
-                                <Card.Title>
+                                <Card.Title className="text-dark">
                                     {pathname === "/home" ? post.user.name : name}
                                     {pathname === "/home" ? post.user.surname : surname} &#8226;
                                 </Card.Title>
@@ -55,7 +55,7 @@ const Post = ({
                                     pathname === "/home"
                                         ? `/profile/${post.user._id}`
                                         : `/profile/${id}`
-                                }
+                                } className="text-decoration-none"
                             >
                                 <Card.Subtitle className="mb-2 text-secondary">
                                     {pathname === "/home" ? post.user.title : title}
@@ -87,7 +87,7 @@ const Post = ({
                             pathname === "/home" ? `/profile/${post.user._id}` : `/profile/${id}`
                         }
                     ></Link>
-                    <Card.Text style={{ marginLeft: "4.3em", fontSize: "large" }}>
+                    <Card.Text style={{ marginTop: "3%", marginLeft:"2%"}}>
                         {pathname === "/home" ? post.text : text}
                     </Card.Text>
                 </Card.Body>
@@ -97,28 +97,28 @@ const Post = ({
                         xs="2"
                         className="d-flex align-items-center justify-content-center p-2 mx-3 rounded"
                     >
-                        <i className="bi bi-hand-thumbs-up"></i>
+                        <i className="bi bi-hand-thumbs-up"></i>&nbsp;
                         <p className="mb-0 ml-2 text-primary">Consiglia</p>
                     </Col>
                     <Col
                         xs="2"
                         className="d-flex align-items-center justify-content-center p-2 mx-3 rounded"
                     >
-                        <i className="bi bi-chat-right-text"></i>
+                        <i className="bi bi-chat-right-text"></i>&nbsp;
                         <p className="mb-0 ml-2">Commenta</p>
                     </Col>
                     <Col
                         xs="2"
                         className="d-flex align-items-center justify-content-center p-2 mx-3 rounded"
                     >
-                        <i className="bi bi-arrow-90deg-right"></i>
+                        <i className="bi bi-arrow-90deg-right"></i>&nbsp;
                         <p className="mb-0 ml-2">Condividi</p>
                     </Col>
                     <Col
                         xs="2"
                         className="d-flex align-items-center justify-content-center p-2 mx-3 rounded"
                     >
-                        <i className="bi bi-send"></i>
+                        <i className="bi bi-send"></i>&nbsp;
                         <p className="mb-0 ml-2">Invia</p>
                     </Col>
                 </Row>
