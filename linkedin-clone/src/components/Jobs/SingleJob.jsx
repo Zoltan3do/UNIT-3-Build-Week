@@ -20,8 +20,7 @@ const SingleJob = ({ job }) => {
                     </Card.Subtitle>
                 </Link>
                 <Card.Text className="mb-0">{job.candidate_required_location}</Card.Text>
-
-                <Card.Text className="active ">
+                <Card.Text >
                     <small className="ml-1">Selezione attiva</small>
                 </Card.Text>
 

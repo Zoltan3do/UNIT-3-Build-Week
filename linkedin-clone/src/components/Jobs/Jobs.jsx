@@ -7,12 +7,12 @@ import { useSelector } from "react-redux";
 
 const Jobs = () => {
   const [position, setPosition] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Aggiungiamo lo stato di caricamento
+  const [isLoading, setIsLoading] = useState(true);
   const profile = useSelector(state => state.profile);
 
   useEffect(() => {
     const fetchJobs = async () => {
-      setIsLoading(true); // Impostiamo lo stato di caricamento a true prima del fetch
+      setIsLoading(true);
       try {
         const response = await fetch(
           "https://strive-benchmark.herokuapp.com/api/jobs"
@@ -26,15 +26,15 @@ const Jobs = () => {
           console.log("Qualcosa è andato storto durante il recupero dei dati");
         }
       } finally {
-        setIsLoading(false); // Impostiamo lo stato di caricamento a false dopo il fetch
+        setIsLoading(false);
       }
     };
 
     fetchJobs();
-  }, []); // Aggiungiamo position all'array delle dipendenze
+  }, []);
 
   return (
-    <Suspense fallback={<p>Caricamento...</p>}>
+    <Suspense fallback={<p>Caricamento ...</p>}>
       <Container>
         <Row className="">
           <Col md={3} sm={12}>
@@ -45,8 +45,8 @@ const Jobs = () => {
               <h4 className="mb-0">Le principali offerte di lavoro per te</h4>
               <p className="text-secondary">Sulla base del tuo profilo e della tua cronologia delle ricerche</p>
 
-              {isLoading ? ( // Renderizziamo condizionalmente il messaggio di caricamento
-                <p>Caricamento in corso...</p>
+              {isLoading ? ( 
+                <p>Caricamento ...</p>
               ) : (
                 <Row md={1} xs={1} style={{ flexWrap: "wrap" }}>
                   {position &&
