@@ -1,5 +1,6 @@
 .messaging-container {
     height: 100vh;
+   margin-top: 4%;
   }
   
   .conversation-list {
@@ -37,3 +38,16 @@
     color: #5F5F5F !important; 
   }
   
+  
+  .messaging-content {
+    background-color: #ffffff; 
+    
+    
+  }
+  
+  .green {
+    border-radius: 15%;
+  }
+  .bigi{
+    background-color: #EBEBEB !important;
+  }

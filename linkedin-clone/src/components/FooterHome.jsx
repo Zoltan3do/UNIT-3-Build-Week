@@ -62,13 +62,13 @@ const FooterHome = () => (
       </div>
         
       
-        <Col className="text-muted d-flex align-items-center">
+        <Col className="text-muted d-flex ms-5">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
             alt="linkedin logo"
             style={{ width: 22 }}
           />
-          <p className="mb-0 ms-2">LinkedIn Corporation © {new Date().getFullYear()}</p>
+          <p className="mb-0 ms-2 text-center">LinkedIn Corporation © {new Date().getFullYear()}</p>
         </Col>
       
   </footer>

@@ -112,7 +112,7 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
                                             <div>Lavoro</div>
                                         </div>
 
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                        <div className="navbar-icon-container text-center mx-3 navbar-icon" to="/Messaging">
                                             <ChatDotsFill size={20} />
                                             <div>Messaggistica</div>
                                         </div>
@@ -246,10 +246,10 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
                                             <div>Lavoro</div>
                                         </div>
 
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
-                                            <ChatDotsFill size={20} />
-                                            <div>Messaggistica</div>
-                                        </div>
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon" to="/Messaging">
+                    <ChatDotsFill size={20} />
+                    <div>Messaggistica</div>
+                  </Link>
 
                                         <div className="navbar-icon-container text-center mx-3 navbar-icon">
                                             <BellFill size={20} />

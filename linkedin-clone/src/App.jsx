@@ -48,6 +48,11 @@ const App = () => {
           <Home userProfile={onUserChange} ></Home>
           
         } />
+        <Route path="/Messaging" element={
+          <Messaging userProfile={onUserChange} ></Messaging>
+          
+          
+        } />
         
       </Routes>
 
