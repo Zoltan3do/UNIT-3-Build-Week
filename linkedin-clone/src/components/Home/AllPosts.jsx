@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -66,7 +68,7 @@ const AllPosts = ({ postsAdded }) => {
         };
     useEffect(() => {
         fetchPosts();
-    }, []);
+    });
 
     return (
         <>
