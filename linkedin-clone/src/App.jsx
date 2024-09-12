@@ -58,7 +58,6 @@ const App = () => {
         />
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
-          
         } />
         <Route path="/jobs" element={
           <Jobs userProfile={onUserChange}></Jobs>
