@@ -58,9 +58,9 @@ const LeftSidebar = ({ userProfile }) => {
                 <Card
                     id="right-sidebar__right"
                     className="pt-2 px-0 mt-3"
-                    style={{ borderRadius: "7px", width: "18rem", marginLeft: "5.5em" }}
+                    style={{ borderRadius: "7px", width: "100%", marginLeft: "5.5em" }}
                 >
-                    <Card.Body id="follow" >
+                    <Card.Body id="follow " clas >
                         <Row>
                             <Col className="d-flex flex-column ">
                                 <a href=""> Gruppi </a>

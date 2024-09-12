@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Home from "./components/Home/Home";
+import Jobs from "./components/Jobs/Jobs";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -44,8 +45,10 @@ const App = () => {
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
         } />
+        <Route path="/jobs" element={
+          <Jobs></Jobs>
+        } />
       </Routes>
-
     </BrowserRouter>
   );
 };
