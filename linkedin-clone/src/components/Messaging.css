@@ -1,6 +1,7 @@
 .messaging-container {
     height: 100vh;
    margin-top: 4%;
+   background-color: #EBEBEB !important;
   }
   
   .conversation-list {
@@ -40,7 +41,7 @@
   
   
   .messaging-content {
-    background-color: #ffffff; 
+    background-color: #EBEBEB !important; 
     
     
   }
@@ -48,6 +49,29 @@
   .green {
     border-radius: 15%;
   }
-  .bigi{
+  .bigi .bigi-1{
     background-color: #EBEBEB !important;
   }
+  .bigi-1{
+    visibility: hidden;
+  }
+
+  .mess {
+    border: 1px solid black;
+    border-radius: 15%;
+  }
+
+  .central-section {
+    border: 0.5px solid #ccc; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
+    padding: 50px; 
+  }
+  
+  .central-section .mess {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+  }
+ 

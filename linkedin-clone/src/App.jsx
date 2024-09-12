@@ -16,6 +16,7 @@ import MyFooter from "./components/MyFooter";
 import NotFound from "./components/NotFound/NotFound";
 import JobsFinder from "./components/jobs/JobsFinder";
 import DinamicProfile from "./components/DinamicProfile/DinamicProfile";
+import Messaging from "./components/Messaging";
 
 
 const App = () => {
@@ -59,6 +60,9 @@ const App = () => {
         } />
         <Route path="/jobs" element={
           <Jobs userProfile={onUserChange}></Jobs>
+        } />
+        <Route path="/Messaging" element={
+          <Messaging userProfile={onUserChange}></Messaging>
         } />
         <Route path="*" element={
           <NotFound />

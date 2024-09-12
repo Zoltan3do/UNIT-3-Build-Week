@@ -75,7 +75,7 @@ const Messaging = () => {
     <Container fluid className="messaging-container">
       <Row className="h-100">
       
-        <Col md={3} className="p-3 bigi">
+        <Col md={3} className="p-3 bigi-1">
           <div className="loreme-ipsum">
             <h6>Lorem Ipsum</h6>
             <p>
@@ -91,8 +91,9 @@ const Messaging = () => {
         </Col>
 
        
-        <Col md={6} className="d-flex flex-column p-3 bg-light">
-          <div className="d-flex justify-content-start align-items-start mb-3">
+        <Col md={6} className="d-flex flex-column p-3 bg-light central-section">
+        <div className="mess">
+        <div className="d-flex justify-content-start align-items-start mb-3 ">
             <h5 className="pt-1">Messaggistica</h5>
 
             <InputGroup style={{ width: "30%" }}>
@@ -223,13 +224,18 @@ const Messaging = () => {
               </Form>
             </Col>
           </Row>
+        </div>
+          
         </Col>
 
        
         <Col md={3} className="p-3 bigi">
           <div className="loreme-ipsum">
-            <h6>Lorem Ipsum</h6>
-            <p>
+            <div className="immagine text-center mt-3">
+            <img src="https://media.licdn.com/dms/image/v2/D560CAQHnX32JxlGu7Q/spinmail-bannerimage-shrink_300_250/spinmail-bannerimage-shrink_300_250/0/1649861338774?e=1726736400&v=beta&t=pKVGrmWZyl3YfPG8Q7Fxmu3N4IW17XHeNux5o8W7ptw" alt="" />
+            </div>
+           
+            <p className="bigi-1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
