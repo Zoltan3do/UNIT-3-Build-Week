@@ -2,7 +2,7 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-import { Card, Image, Button } from "react-bootstrap";
+import { Card, Image, Button, Dropdown } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { BsTrash3 } from "react-icons/bs";
@@ -63,22 +63,25 @@ const Post = ({
                             </Link>
                         </span>
                         {pathname === "/home" && (
-                            <div className="d-flex align-items-center ml-auto">
-                                <i
-                                    className="bi bi-three-dots"
-                                    onClick={() => handleEdit(post._id)}
-                                    style={{ marginRight: '10px', cursor: 'pointer' }}
-                                ></i>
-
-                                {/*button per eliminare il post */}
-                                <Button
-                                    className="ms-auto"
-                                    variant="outline-danger"
-                                    onClick={() => handleDelete(post._id)} // Chiamo handleDelete con l'ID del post
-                                    size="sm"
-                                >
-                                    <BsTrash3 />
-                                </Button>
+                            <div className="d-flex align-items-center ms-auto ">
+                                <Dropdown >
+                                    <Dropdown.Toggle id="dropdown-basic" className="d-flex justify-content-center align-items-center " variant="transparent"
+                                        bsPrefix="custom-dropdown-toggle">
+                                        <i
+                                            className="bi bi-three-dots"
+                                            onClick={() => handleEdit(post._id)}
+                                            style={{ marginRight: '10px', cursor: 'pointer' }}
+                                        ></i>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu >
+                                        <Dropdown.Item href="#">Salva</Dropdown.Item>
+                                        <Dropdown.Item href="#">Segnala</Dropdown.Item>
+                                        <Dropdown.Item className="ms-auto"
+                                            variant="outline-danger"
+                                            onClick={() => handleDelete(post._id)} // Chiamo handleDelete con l'ID del post
+                                            size="sm">Elimina</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </div>
                         )}
                     </div>
@@ -87,7 +90,7 @@ const Post = ({
                             pathname === "/home" ? `/profile/${post.user._id}` : `/profile/${id}`
                         }
                     ></Link>
-                    <Card.Text style={{ marginTop: "3%", marginLeft:"2%"}}>
+                    <Card.Text style={{ marginTop: "3%", marginLeft: "2%" }}>
                         {pathname === "/home" ? post.text : text}
                     </Card.Text>
                 </Card.Body>
