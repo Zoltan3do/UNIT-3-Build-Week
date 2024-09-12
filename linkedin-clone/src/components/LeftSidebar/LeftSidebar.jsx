@@ -1,4 +1,4 @@
- /* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types */
 import { Card, ListGroup, Row } from "react-bootstrap";
 import { BsBookmarkFill } from "react-icons/bs";
 import "./leftSidebar.css";
@@ -14,7 +14,7 @@ const LeftSidebar = ({ userProfile }) => {
                         <img
                             className="profile-image-posts"
                             alt="Profile image"
-                           
+                            src={userProfile.image}
                         />
                     </Card.Header>
                     <Card.Title className="text-center mt-5">

@@ -9,7 +9,7 @@ import Post from "./Post";
 
 const AllPosts = ({ postsAdded }) => {
 
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
     const [numOfPosts, setNumOfPosts] = useState(20);
 
     // const [postsChanged, setPostsChanged] = useState(0);
@@ -43,32 +43,32 @@ const AllPosts = ({ postsAdded }) => {
         }
     };
 
-        // Funzione per eliminare il post
-        const handleDeletePost = async (postId) => {
-            try {
-                const response = await fetch(
-                    `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
-                    {
-                        method: 'DELETE',
-                        headers: {
-                            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68`,
-                        },
-                    }
-                );
-    
-                if (response.ok) {
-                    setPosts(posts.filter(post => post._id !== postId)); // Aggiorno lo stato locale eliminando il post
-                    alert('Post eliminato con successo!');
-                } else {
-                    alert('Errore durante l\'eliminazione del post');
+    // Funzione per eliminare il post
+    const handleDeletePost = async (postId) => {
+        try {
+            const response = await fetch(
+                `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
+                {
+                    method: 'DELETE',
+                    headers: {
+                        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68`,
+                    },
                 }
-            } catch (error) {
-                console.error('Errore durante l\'eliminazione del post:', error);
+            );
+
+            if (response.ok) {
+                setPosts(posts.filter(post => post._id !== postId)); // Aggiorno lo stato locale eliminando il post
+                alert('Post eliminato con successo!');
+            } else {
+                alert('Errore durante l\'eliminazione del post');
             }
-        };
+        } catch (error) {
+            console.error('Errore durante l\'eliminazione del post:', error);
+        }
+    };
     useEffect(() => {
         fetchPosts();
-    });
+    }, [selectedPostId]);
 
     return (
         <>
