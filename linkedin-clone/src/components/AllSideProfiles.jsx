@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, Button, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // L'URL dell'API per ottenere i profili
 const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -68,7 +69,7 @@ const AllSideProfiles = () => {
               variant="outline-secondary"
               className="m-2 rounded-5 border-2 text-black fw-5 w-75"
             >
-              Visualizza profilo
+              <Link to={`/dinamicProfile/${profile._id}` } className="text-decoration-none">Visualizza profilo</Link>
             </Button>
           </div>
         </Card>

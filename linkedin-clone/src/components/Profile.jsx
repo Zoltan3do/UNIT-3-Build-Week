@@ -40,8 +40,7 @@ const Profile = () => {
             <Professional />
           </Col>
           <Col xs={12} md={5} lg={4} xl={3}>
-          <MainSidebar />
-
+            <MainSidebar />
           </Col>
         </Row>
       </Container>

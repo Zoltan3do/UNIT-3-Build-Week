@@ -15,6 +15,7 @@ import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
 import NotFound from "./components/NotFound/NotFound";
 import JobsFinder from "./components/jobs/JobsFinder";
+import DinamicProfile from "./components/DinamicProfile/DinamicProfile";
 
 
 const App = () => {
@@ -63,6 +64,7 @@ const App = () => {
           <NotFound />
         } />
         <Route path="/jobs-finder" element={<JobsFinder searchQuery={searchQuery} />} />
+        <Route path="dinamicProfile/:SingleProfileId" element={<DinamicProfile />}/>
       </Routes>
     </BrowserRouter>
   );
