@@ -11,15 +11,15 @@ const LeftSidebar = ({ userProfile }) => {
                     <Card.Header className="text-center" style={{ height: "3rem" }}>
                         <img
                             className="profile-image-posts"
-                            src={userProfile?.image}
+                            src={userProfile.image}
                             alt=""
                         />
                     </Card.Header>
                     <Card.Title className="text-center mt-5">
-                        {userProfile?.name} {userProfile?.surname}
+                        {userProfile.name} {userProfile.surname}
                     </Card.Title>
                     <Card.Text className="text-secondary text-center">
-                        <p>{userProfile?.bio}</p>
+                        <p>{userProfile.bio}</p>
                     </Card.Text>
                     <ListGroup variant="flush" className="d-flex py-3">
                         <div className="d-flex align-items-center ">
@@ -60,7 +60,7 @@ const LeftSidebar = ({ userProfile }) => {
                     className="pt-2 px-0 mt-3"
                     style={{ borderRadius: "7px", width: "100%", marginLeft: "5.5em" }}
                 >
-                    <Card.Body id="follow " clas >
+                    <Card.Body id="follow " >
                         <Row>
                             <Col className="d-flex flex-column ">
                                 <a href=""> Gruppi </a>

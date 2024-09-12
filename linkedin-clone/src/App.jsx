@@ -47,7 +47,7 @@ const App = () => {
           <Home userProfile={onUserChange} ></Home>
         } />
         <Route path="/jobs" element={
-          <Jobs></Jobs>
+          <Jobs userProfile={onUserChange}></Jobs>
         } />
         <Route path="*" element={
           <NotFound />

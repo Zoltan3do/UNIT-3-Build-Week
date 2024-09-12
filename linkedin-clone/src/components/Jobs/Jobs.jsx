@@ -3,15 +3,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import SingleJob from "./SingleJob";
 import FooterHome from "../FooterHome";
 import LeftSidebar from "../LeftSidebar/LeftSidebar";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-const Jobs = () => {
+const Jobs = ({userProfile}) => {
     const [position, setPosition] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const profile = useSelector(state => state.profile);
-    const [profilo, setProfilo] = useState(profile);
-    console.log(profilo)
+    // const profile = useSelector(state => state.profile);
+    // const [profilo, setProfilo] = useState(profile);
+    // console.log(profilo)
 
     useEffect(() => {
         const fetchJobs = async () => {
@@ -41,7 +41,7 @@ const Jobs = () => {
             <Container>
                 <Row className="">
                     <Col md={3} sm={12}>
-                        <LeftSidebar userProfile={profile}></LeftSidebar>
+                        <LeftSidebar userProfile={userProfile}></LeftSidebar>
                     </Col>
                     <Col md={6} sm={12}>
                         <div style={{ marginTop: "100px" }} className="d-flex flex-column align-items-between ms-3">
