@@ -48,7 +48,7 @@ const HomeCreatePost = () => {
     }, [dispatch]);
 
     return (
-        <div className="p-3 mb-4" style={{ marginTop: "100px" }}>
+        <div className="p-3 mb-4" style={{ marginTop: "100px" }}> {/* rimuovere il margin bottom */}
             <Card className='p-3 rounded-3'>
                 <div className="d-flex align-items-center">
                     {user && user.image ? (
