@@ -238,7 +238,6 @@ const Messaging = () => {
           </div>
         </Col>
       </Row>
-      <FooterHome/>
     </Container>
   );
 };

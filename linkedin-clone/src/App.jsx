@@ -44,7 +44,6 @@ const App = () => {
           onSearchChange={handleSearchChange}
         />
       </header>
-
       <Routes>
         <Route
           path="/"
@@ -53,7 +52,6 @@ const App = () => {
               <Profile />
               <MyFooter />
             </main>
-            
           }
         />
         <Route path="/home" element={
