@@ -1,13 +1,10 @@
   .jobtitle {
-    font-size: 18pt;
+    font-size: 18px;
   }
 
   .jobtitle:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 
-  .card:hover {
-    background-color: #d9e7f4;
-  }
 
   

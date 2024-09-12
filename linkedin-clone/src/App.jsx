@@ -14,6 +14,7 @@ import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
+import NotFound from "./components/NotFound/NotFound";
 
 
 const App = () => {
@@ -48,7 +49,10 @@ const App = () => {
         <Route path="/jobs" element={
           <Jobs></Jobs>
         } />
-      </Routes>
+        <Route path="*" element={
+          <NotFound />
+        } />
+          </Routes>
     </BrowserRouter>
   );
 };
