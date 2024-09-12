@@ -129,9 +129,6 @@ const Activities = () => {
                 }}
                 onClick={handleActivitiesIconClick}
               >
-
-
-
                 <span>
                   <i className="bi bi-pencil pointer bg-gray-hover rounded-circle fs-5"></i>
                 </span>
