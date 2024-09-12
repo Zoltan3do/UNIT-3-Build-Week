@@ -4,7 +4,7 @@ import "./notfound.css"
 
 const NotFound = () => {
   return (
-    <div id="notfound">
+    <div id="notfound" className="mt-5">
       <div className="notfound">
         <div className="notfound-404">
           <h1>4<span>🥵</span>4</h1>
