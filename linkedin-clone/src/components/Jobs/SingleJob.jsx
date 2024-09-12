@@ -23,7 +23,6 @@ const SingleJob = ({ job }) => {
                 <Card.Text >
                     <small className="ml-1">Selezione attiva</small>
                 </Card.Text>
-
                 <Card.Text>{job.publication_date}</Card.Text>
             </Card.Body>
         </Card>

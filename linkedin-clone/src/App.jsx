@@ -18,7 +18,7 @@ import NotFound from "./components/NotFound/NotFound";
 
 
 const App = () => {
-  const [isScrollFromChild, setIsScrollFromChild] = useState(false);
+  const [, setIsScrollFromChild] = useState(false);
   const [onUserChange, setOnUserChange] = useState({});
   const handleScrollChange = (newScrollState) => {
     setIsScrollFromChild(newScrollState);
