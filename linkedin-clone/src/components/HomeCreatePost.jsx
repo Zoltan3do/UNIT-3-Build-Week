@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Form, Button, Modal, Alert, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { createHomePost, fetchUserProfile, deleteHomePost } from '../redux/actions/homePostAction'; // Importa deleteHomePost
+import { createHomePost, fetchUserProfile, deleteHomePost } from '../redux/actions/homePostAction'; 
 import { FaCalendarDays } from "react-icons/fa6";
 import { RiArticleFill } from "react-icons/ri";
 import { FaSmile, FaImage, FaCalendarAlt, FaCog, FaPlus } from 'react-icons/fa';
@@ -159,7 +159,7 @@ const HomeCreatePost = () => {
                 handleCreateEvent={handleCreateEvent}  // Usa la funzione per creare eventi
             />
 
-            {/* Mostra la lista dei post con il pulsante di eliminazione */}
+            {/* Mostra la lista dei post con il button elimia */}
             <div className="mt-4">
                 {posts.map((post) => (
                     <Card key={post._id} className="mb-3">
@@ -170,7 +170,7 @@ const HomeCreatePost = () => {
                             </div>
                             <Button
                                 variant="outline-danger"
-                                onClick={() => handleDeletePost(post._id)}  // Aggiungi il pulsante di eliminazione
+                                onClick={() => handleDeletePost(post._id)}  // button elimia
                             >
                                 Elimina
                             </Button>
