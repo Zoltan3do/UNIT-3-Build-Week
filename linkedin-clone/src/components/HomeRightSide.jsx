@@ -42,7 +42,7 @@ const HomeRightSide = () => {
             <li>Allenare il pensiero strategico <small className="text-secondary">-2,089 lettori</small> </li>
             <li>I lavori più richiesti nei prossimi 5 anni <small className="text-secondary"> -915 lettori</small></li>
             <li>Se AI sale in cattedra<small className="text-secondary">-2,500 lettori</small> </li>
-            <li>Arriva il Voucher 3I per l'innovazione <small className="text-secondary"> -905 lettori</small></li>
+            <li>Arriva il Voucher 3I per l&apos;innovazione <small className="text-secondary"> -905 lettori</small></li>
             {showMore && (
               <>
                 <li>Che si dice della Nutella vegana <small className="text-secondary">-445 lettori</small></li>

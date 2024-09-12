@@ -8,7 +8,6 @@ import AdvImg from "./AdvImg"
 const MainSidebar = () =>{
     return(
        <Row className="flex-column no-scroll-margin">
-       
      
         <SidebarProfile/>
         <AdvertisingSide/>
