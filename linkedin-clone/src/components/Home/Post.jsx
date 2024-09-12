@@ -47,7 +47,7 @@ const Post = ({
                             >
                                 <Card.Title className="text-dark">
                                     {pathname === "/home" ? post.user.name : name}
-                                    {pathname === "/home" ? post.user.surname : surname} &#8226;
+                                    {pathname === "/home" ? post.user.surname : surname}
                                 </Card.Title>
                             </Link>
                             <Link
