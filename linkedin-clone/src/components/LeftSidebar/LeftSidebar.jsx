@@ -13,7 +13,6 @@ const LeftSidebar = ({ userProfile }) => {
                     <Card.Header className="text-center" style={{ height: "3rem" }}>
                         <img
                             className="profile-image-posts"
-                            src={userProfile?.image}
                             alt="Profile image"
                            
                         />

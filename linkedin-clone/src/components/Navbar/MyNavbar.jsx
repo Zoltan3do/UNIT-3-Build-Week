@@ -11,11 +11,13 @@ import {
 } from "react-bootstrap";
 import { Search, HouseDoorFill, PeopleFill, BriefcaseFill, ChatDotsFill, BellFill } from "react-bootstrap-icons";
 import TendinaTu from "./TendinaTu";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect, Suspense } from "react";
 import "./MyNavbar.css";
 
-function MyNavbar({ onScrollChange, onUserProfileChange }) {
+function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
+    const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState('');
 
     const [userProfile, setUserProfile] = useState({});
 
@@ -67,6 +69,14 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
         }
     }
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            navigate(`/jobs-finder?search=${encodeURIComponent(searchQuery)}`);
+            onSearchChange(searchQuery); // Aggiungiamo questa riga
+        }
+    };
+
     return (
         <>
             <Suspense fallback={<p>Caricamento...</p>}>
@@ -85,12 +95,14 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="me-auto d-none d-md-inline">
-                                        <Form className="d-flex align-items-center">
+                                        <Form className="d-flex align-items-center" onSubmit={handleSearch}>
                                             <Search className="me-2 navbar-icon" size={20} />
                                             <FormControl
                                                 type="text"
                                                 placeholder="Cerca"
                                                 className="me-2 search-background"
+                                                value={searchQuery}
+                                                onChange={(e) => setSearchQuery(e.target.value)}
                                             />
                                         </Form>
                                     </Nav>
@@ -219,12 +231,14 @@ function MyNavbar({ onScrollChange, onUserProfileChange }) {
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="me-auto d-none d-md-inline">
-                                        <Form className="d-flex align-items-center">
+                                        <Form className="d-flex align-items-center" onSubmit={handleSearch}>
                                             <Search className="me-2 navbar-icon" size={20} />
                                             <FormControl
                                                 type="text"
                                                 placeholder="Cerca"
                                                 className="me-2 search-background"
+                                                value={searchQuery}
+                                                onChange={(e) => setSearchQuery(e.target.value)}
                                             />
                                         </Form>
                                     </Nav>

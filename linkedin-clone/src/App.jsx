@@ -1,4 +1,3 @@
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "slick-carousel/slick/slick.css";
@@ -15,23 +14,34 @@ import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
 import NotFound from "./components/NotFound/NotFound";
+import JobsFinder from "./components/jobs/JobsFinder";
 
 
 const App = () => {
   const [, setIsScrollFromChild] = useState(false);
   const [onUserChange, setOnUserChange] = useState({});
+  const [searchQuery, setSearchQuery] = useState('');
+
   const handleScrollChange = (newScrollState) => {
     setIsScrollFromChild(newScrollState);
   };
 
-
   const handleUserChange = (newUser) => {
     setOnUserChange(newUser);
   }
+
+  const handleSearchChange = (query) => {
+    setSearchQuery(query);
+  }
+
   return (
     <BrowserRouter>
       <header>
-        <MyNavbar onScrollChange={handleScrollChange} onUserProfileChange={handleUserChange} />
+        <MyNavbar 
+          onScrollChange={handleScrollChange} 
+          onUserProfileChange={handleUserChange}
+          onSearchChange={handleSearchChange}
+        />
       </header>
       <Routes>
         <Route
@@ -52,6 +62,7 @@ const App = () => {
         <Route path="*" element={
           <NotFound />
         } />
+        <Route path="/jobs-finder" element={<JobsFinder searchQuery={searchQuery} />} />
       </Routes>
     </BrowserRouter>
   );
