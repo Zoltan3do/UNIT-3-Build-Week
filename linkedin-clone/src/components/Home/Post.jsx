@@ -2,13 +2,15 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-import { Card, Image } from "react-bootstrap";
+import { Card, Image, Button } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { BsTrash3 } from "react-icons/bs";
 
 const Post = ({
     post,
     handleEdit,
+    handleDelete,
     image,
     name,
     surname,
@@ -61,11 +63,23 @@ const Post = ({
                             </Link>
                         </span>
                         {pathname === "/home" && (
-                            <i
-                                style={{ marginLeft: "auto" }}
-                                className="bi bi-three-dots"
-                                onClick={() => handleEdit(post._id)}
-                            ></i>
+                            <div className="d-flex align-items-center ml-auto">
+                                <i
+                                    className="bi bi-three-dots"
+                                    onClick={() => handleEdit(post._id)}
+                                    style={{ marginRight: '10px', cursor: 'pointer' }}
+                                ></i>
+
+                                {/*button per eliminare il post */}
+                                <Button
+                                className="ms-auto"
+                                    variant="outline-danger"
+                                    onClick={() => handleDelete(post._id)}
+                                    size="sm"
+                                >
+                                   <BsTrash3 />
+                                </Button>
+                            </div>
                         )}
                     </div>
                     <Link
@@ -116,7 +130,6 @@ const Post = ({
                 </Modal.Body>
             </Modal>
         </>
-
     );
 };
 
