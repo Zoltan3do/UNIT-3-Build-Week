@@ -36,36 +36,38 @@ const App = () => {
   }
 
   return (
+
     <BrowserRouter>
-      <header>
-        <MyNavbar 
-          onScrollChange={handleScrollChange} 
-          onUserProfileChange={handleUserChange}
-          onSearchChange={handleSearchChange}
-        />
-      </header>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <main >
-              <Profile />
-              <MyFooter />
-            </main>
-          }
-        />
-        <Route path="/home" element={
-          <Home userProfile={onUserChange} ></Home>
-        } />
-        <Route path="/jobs" element={
-          <Jobs userProfile={onUserChange}></Jobs>
-        } />
-        <Route path="*" element={
-          <NotFound />
-        } />
-        <Route path="/jobs-finder" element={<JobsFinder searchQuery={searchQuery} />} />
-        <Route path="dinamicProfile/:SingleProfileId" element={<DinamicProfile />}/>
-      </Routes>
+        <header>
+          <MyNavbar
+            onScrollChange={handleScrollChange}
+            onUserProfileChange={handleUserChange}
+            onSearchChange={handleSearchChange}
+          />
+        </header>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <main >
+                <Profile />
+                <MyFooter />
+              </main>
+            }
+          />
+          <Route path="/home" element={
+            <Home userProfile={onUserChange} ></Home>
+          } />
+          <Route path="/jobs" element={
+            <Jobs userProfile={onUserChange}></Jobs>
+          } />
+          <Route path="*" element={
+            <NotFound />
+          } />
+          <Route path="/jobs-finder" element={<JobsFinder searchQuery={searchQuery} />} />
+          <Route path="dinamicProfile/:SingleProfileId" element={<DinamicProfile />} />
+        </Routes>
+
     </BrowserRouter>
   );
 };

@@ -11,34 +11,31 @@ import { useEffect, useState } from 'react'
 
 const DinamicProfile = () => {
 
-    const [data, setData] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [data, setData] = useState({});
 
-    const {SingleProfileId} = useParams()
+    const { SingleProfileId } = useParams({})
 
-
-    const fetchData = async () => {
-        setIsLoading(true);
-        setError(null);
-        try {
-            const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${SingleProfileId}`,{
-                headers:{
-                    Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRmNDI3NWFmNDM0YjAwMTU5ZDgzMmIiLCJpYXQiOjE3MjU5MDc5NDAsImV4cCI6MTcyNzExNzU0MH0.9BnplLmgaQIFjhcARlwTs5Yimp8cJnqRsIQPvF23W1g"
+    const fetchData = () => {
+        const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/";
+        fetch(baseEndpoint + SingleProfileId, {
+            headers: {
+                Authorization:
+                    " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRmNDI3NWFmNDM0YjAwMTU5ZDgzMmIiLCJpYXQiOjE3MjU5MDc5NDAsImV4cCI6MTcyNzExNzU0MH0.9BnplLmgaQIFjhcARlwTs5Yimp8cJnqRsIQPvF23W1g",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Errore nel recupero del profilo");
                 }
+            })
+            .then((profile) => {
+                setData(profile)
+            })
+            .catch((err) => {
+                console.error(err);
             });
-
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status} ${response.statusText}`);
-            }
-            const result = await response.json();
-            setData(result);
-            console.log("risultati fetch profilo dinamico" + data)
-        } catch (error) {
-            setError(error.message);
-        } finally {
-            setIsLoading(false);
-        }
     };
 
     useEffect(() => {
