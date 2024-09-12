@@ -72,7 +72,7 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchQuery.trim()) {
-            navigate(`/jobs?search=${encodeURIComponent(searchQuery)}`);
+            navigate(`/jobs-finder?search=${encodeURIComponent(searchQuery)}`);
             onSearchChange(searchQuery); // Aggiungiamo questa riga
         }
     };

@@ -14,6 +14,7 @@ import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
 import NotFound from "./components/NotFound/NotFound";
+import JobsFinder from "./components/jobs/JobsFinder";
 
 
 const App = () => {

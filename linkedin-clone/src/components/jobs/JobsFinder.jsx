@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Container, Row, Col, Card, Button, Badge, Form, ButtonGroup, Dropdown } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Badge, Form } from 'react-bootstrap';
 import './JobsFinder.css';
 import PropTypes from 'prop-types';
 
