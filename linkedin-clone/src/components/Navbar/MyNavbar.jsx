@@ -62,7 +62,6 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                 const userData = await response.json();
                 setUserProfile(userData);
                 onUserProfileChange(userData);
-                console.log(userData)
                 return userProfile
             }
         } catch (error) {
@@ -108,8 +107,8 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                         </Form>
                                     </Nav>
 
-                                    <Nav className="ms-auto d-flex align-items-center">
-                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon" to="/home">
+                                    <Nav className="d-flex align-items-center ">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon text-decoration-none" to="/home">
                                             <HouseDoorFill size={20} />
                                             <div>Home</div>
                                         </Link>
@@ -119,10 +118,10 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                             <div>Rete</div>
                                         </div>
 
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon text-decoration-none" to="/jobs">
                                             <BriefcaseFill size={20} />
                                             <div>Lavoro</div>
-                                        </div>
+                                        </Link>
 
                                         <div className="navbar-icon-container text-center mx-3 navbar-icon">
                                             <ChatDotsFill size={20} />
@@ -245,7 +244,7 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                     </Nav>
 
                                     <Nav className="ms-auto d-flex align-items-center">
-                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon" to="/home">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon text-decoration-none" to="/home">
                                             <HouseDoorFill size={20} />
                                             <div>Home</div>
                                         </Link>
@@ -255,10 +254,10 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                             <div>Rete</div>
                                         </div>
 
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon text-decoration-none" to="/jobs">
                                             <BriefcaseFill size={20} />
                                             <div>Lavoro</div>
-                                        </div>
+                                        </Link>
 
                                         <div className="navbar-icon-container text-center mx-3 navbar-icon">
                                             <ChatDotsFill size={20} />

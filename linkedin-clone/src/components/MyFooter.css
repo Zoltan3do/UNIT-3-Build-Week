@@ -1,7 +1,4 @@
-.footix{
-    background-color: #F4F2EE;
-}
- 
+
   .footix .text-light {
     color: #f8f9fa; 
   }
@@ -23,10 +20,6 @@
   
   .footix .btn {
     border-radius: 0.2rem;
-  }
-  
-  .footix .btn-light {
-    background-color: #f8f9fa; 
   }
   
   .footix .btn-sm {

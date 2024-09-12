@@ -1,0 +1,10 @@
+  .jobtitle {
+    font-size: 18px;
+  }
+
+  .jobtitle:hover {
+    text-decoration: underline !important;
+  }
+
+
+  

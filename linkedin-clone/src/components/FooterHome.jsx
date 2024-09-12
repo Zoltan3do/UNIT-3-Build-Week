@@ -1,52 +1,46 @@
-import { Row, Col, Container, Dropdown } from "react-bootstrap";
+import {  Col, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./FooterHome.css";
 
 const FooterHome = () => (
-  <footer className="footixHome py-3" style={{ maxWidth: "350px", fontSize: "1.1rem" }}>
-    <Container fluid>
-      <Row>
-        <Col md={6} className="mb-2">
-          <ul className="list-unstyled">
-            <li><a href="https://about.linkedin.com/" className="text-muted text-decoration-none">Informazioni</a></li>
-            <li><a href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_search_srp_all" className="text-muted text-decoration-none">Centro assistenza</a></li>
-          </ul>
-        </Col>
-        <Col md={6} className="mb-2">
-          <ul className="list-unstyled">
+  <footer className="footixHome py-3" style={{ maxWidth: "350px",fontSize:'small' }}>
+   
+       <div>
+       <ul className="list-unstyled d-flex justify-content-center">
+            <li><a href="https://about.linkedin.com/" className="text-muted text-decoration-none me-4">Informazioni</a></li>
             <li><a href="https://www.linkedin.com/accessibility" className="text-muted text-decoration-none">Accessibilità</a></li>
-            <li>
+          
+          </ul>
+       </div>
+       <div >
+       <ul className="list-unstyled d-flex justify-content-center">
+       <li><a href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_search_srp_all" className="text-muted text-decoration-none">Centro assistenza</a></li>
+            <li className="me-5">
               <Dropdown>
-                <Dropdown.Toggle variant="light" className="text-muted" id="dropdown-privacy">
+                <Dropdown.Toggle variant="light" className="text-muted" id="dropdown-privacy"  style={{fontSize:'small' }} >
                   Privacy e condizioni
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item href="https://www.linkedin.com/legal/privacy-policy">Informativa sulla privacy</Dropdown.Item>
                   <Dropdown.Item href="https://www.linkedin.com/legal/cookie-policy">Politica sui cookie</Dropdown.Item>
-                  <Dropdown.Item href="https://www.linkedin.com/legal/user-agreement">Condizioni d'uso</Dropdown.Item>
+                  <Dropdown.Item href="https://www.linkedin.com/legal/user-agreement">Condizioni d&apos;uso</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </li>
           </ul>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="text-muted mb-2">
-          <a href="https://www.linkedin.com/help/linkedin/answer/a1342443/?lang=it" className="text-muted text-decoration-none">Opzioni per gli annunci pubblicitari</a>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6} className="mb-2">
-          <ul className="list-unstyled">
-            <li><a href="https://www.linkedin.com/advertising" className="text-muted text-decoration-none">Pubblicità</a></li>
-            <li><a href="/" className="text-muted text-decoration-none">Scarica l'app LinkedIn</a></li>
-          </ul>
-        </Col>
-        <Col md={6} className="mb-2">
-          <ul className="list-unstyled">
+          </div>
+        
+     
+          <div className="d-flex justify-content-center mb-3">
+      <a href="https://www.linkedin.com/help/linkedin/answer/a1342443/?lang=it" className="text-muted text-decoration-none">Opzioni per gli annunci pubblicitari</a>
+      </div>
+       
+      <div>
+      <ul className="list-unstyled d-flex justify-content-center">
+            <li><a href="https://www.linkedin.com/advertising" className="text-muted text-decoration-none me-4">Pubblicità</a></li>
             <li>
               <Dropdown>
-                <Dropdown.Toggle variant="light" className="text-muted" id="dropdown-business-services">
+                <Dropdown.Toggle variant="light" className="text-muted" id="dropdown-business-services"  style={{fontSize:'small' }}>
                   Servizi alle aziende
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -57,11 +51,17 @@ const FooterHome = () => (
                 </Dropdown.Menu>
               </Dropdown>
             </li>
+          </ul>
+          </div>
+      
+          <div>
+          <ul className="list-unstyled d-flex justify-content-center">
+          <li><a href="/" className="text-muted text-decoration-none me-4">Scarica l'app LinkedIn</a></li>
             <li><a href="/" className="text-muted text-decoration-none">Altro</a></li>
           </ul>
-        </Col>
-      </Row>
-      <Row>
+      </div>
+        
+      
         <Col className="text-muted d-flex align-items-center">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
@@ -70,8 +70,7 @@ const FooterHome = () => (
           />
           <p className="mb-0 ms-2">LinkedIn Corporation © {new Date().getFullYear()}</p>
         </Col>
-      </Row>
-    </Container>
+      
   </footer>
 );
 
