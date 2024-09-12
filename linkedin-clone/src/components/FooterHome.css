@@ -35,7 +35,8 @@
 }
 
 .footixHome a:hover {
-  color: #0a66c2; /* Cambia colore durante l'hover */
+  color: #0a66c2 !important; 
+  text-decoration: underline !important;
 }
 
 .footixHome ul {
