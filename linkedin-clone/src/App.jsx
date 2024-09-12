@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
 import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
+import Messaging from "./components/Messaging";
 
 
 const App = () => {
@@ -29,7 +30,9 @@ const App = () => {
     <BrowserRouter>
       <header>
         <MyNavbar onScrollChange={handleScrollChange} onUserProfileChange={handleUserChange} />
+      
       </header>
+
       <Routes>
         <Route
           path="/"
@@ -38,11 +41,14 @@ const App = () => {
               <Profile />
               <MyFooter />
             </main>
+            
           }
         />
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
+          
         } />
+        
       </Routes>
 
     </BrowserRouter>

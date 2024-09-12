@@ -1,0 +1,39 @@
+.messaging-container {
+    height: 100vh;
+  }
+  
+  .conversation-list {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+  
+  .conversation-item {
+    cursor: pointer;
+  }
+  
+  .chat-body {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .message-text {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  .message.text-end .message-text {
+    background-color: #00754F;
+    color: white;
+  }
+.list-group-item.active {
+    background-color: #EBEBEB !important;
+    border-color: #EBEBEB!important; 
+    color: #5F5F5F !important; 
+  }
+  
