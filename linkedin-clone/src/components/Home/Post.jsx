@@ -72,12 +72,12 @@ const Post = ({
 
                                 {/*button per eliminare il post */}
                                 <Button
-                                className="ms-auto"
+                                    className="ms-auto"
                                     variant="outline-danger"
-                                    onClick={() => handleDelete(post._id)}
+                                    onClick={() => handleDelete(post._id)} // Chiamo handleDelete con l'ID del post
                                     size="sm"
                                 >
-                                   <BsTrash3 />
+                                    <BsTrash3 />
                                 </Button>
                             </div>
                         )}

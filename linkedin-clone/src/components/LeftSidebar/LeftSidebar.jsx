@@ -15,8 +15,7 @@ const LeftSidebar = ({ userProfile }) => {
                             className="profile-image-posts"
                             src={userProfile?.image}
                             alt="Profile image"
-                            src={userProfile.image}
-                            alt=""
+                           
                         />
                     </Card.Header>
                     <Card.Title className="text-center mt-5">
