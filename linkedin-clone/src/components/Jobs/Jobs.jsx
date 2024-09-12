@@ -48,8 +48,10 @@ const Jobs = () => {
                             <h4 className="mb-0">Le principali offerte di lavoro per te</h4>
                             <p className="text-secondary">Sulla base del tuo profilo e della tua cronologia delle ricerche</p>
 
-                            {isLoading ? (
+                            {isLoading ? (<>
                                 <p>Caricamento ...</p>
+                                <p style={{height:"100vh"}}></p>
+                            </>
                             ) : (
                                 <Row md={1} xs={1} style={{ flexWrap: "wrap" }}>
                                     {position &&
