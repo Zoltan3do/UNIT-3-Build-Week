@@ -69,7 +69,7 @@ const AllSideProfiles = () => {
               variant="outline-secondary"
               className="m-2 rounded-5 border-2 text-black fw-5 w-75"
             >
-              <Link to={`/dinamicProfile/${profile._id}` } className="text-decoration-none">Visualizza profilo</Link>
+              <Link to={`/profile/${profile._id}` } className="text-decoration-none">Visualizza profilo</Link>
             </Button>
           </div>
         </Card>
