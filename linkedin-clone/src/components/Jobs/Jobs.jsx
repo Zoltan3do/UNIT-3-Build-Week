@@ -6,7 +6,7 @@ import FooterHome from "../FooterHome";
 import LeftSidebar from "../LeftSidebar/LeftSidebar";
 // import { useSelector } from "react-redux";
 
-const Jobs = ({userProfile}) => {
+const Jobs = ({ userProfile }) => {
     const [position, setPosition] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -50,7 +50,7 @@ const Jobs = ({userProfile}) => {
                             <p className="text-secondary">Sulla base del tuo profilo e della tua cronologia delle ricerche</p>
                             {isLoading ? (<>
                                 <p>Caricamento ...</p>
-                                <p style={{height:"100vh"}}></p>
+                                <p style={{ height: "100vh" }}></p>
                             </>
                             ) : (
                                 <Row md={1} xs={1} style={{ flexWrap: "wrap" }}>
@@ -63,7 +63,9 @@ const Jobs = ({userProfile}) => {
                         </div>
                     </Col>
                     <Col md={3} sm={12}>
-                        <FooterHome></FooterHome>
+                        <div style={{marginTop:"100px"}}>
+                            <FooterHome></FooterHome>
+                        </div>
                     </Col>
                 </Row>
             </Container>
