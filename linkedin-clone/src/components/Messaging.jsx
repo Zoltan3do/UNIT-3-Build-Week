@@ -91,7 +91,7 @@ const Messaging = () => {
         </Col>
 
        
-        <Col md={6} className="d-flex flex-column p-3 bg-light central-section">
+        <Col md={6} className="d-flex flex-column p-0 pt-3 bg-light central-section ">
         <div className="mess">
         <div className="d-flex justify-content-start align-items-start mb-3 ">
             <h5 className="pt-1">Messaggistica</h5>
