@@ -40,12 +40,12 @@ const Profile = () => {
         <Row>
           <Col xs={12} md={7} lg={8} xl={9}>
             <ProfileSection />
-            <Experiences userId={state.profile?._id} canEdit={true}  />
             <Suggestions />
             <Analysis />
             <Resources />
             <Activities />
             <Professional />
+            <Experiences userId={state.profile?._id} canEdit={true}  />
           </Col>
           <Col xs={12} md={5} lg={4} xl={3}>
             <MainSidebar />

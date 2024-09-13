@@ -1,12 +1,20 @@
-import { Button, Card, Col, Row, Spinner, Modal, Container } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Row,
+  Spinner,
+  Modal,
+  Container,
+} from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchSingleProfile } from "../redux/actions/homePostAction";
 import ImageUploadProfile from "./UploadImageProfile";
-import Analysis from './Analisys';
-import Resources from './Resources';
-import Professional from './Professional';
+import Analysis from "./Analisys";
+import Resources from "./Resources";
+import Professional from "./Professional";
 import SidebarProfile from "./SidebarProfile";
 import AdvertisingSide from "./AdvertisingSide";
 import PeopleToKnowSide from "./PeopleToKnowSide";
@@ -55,18 +63,18 @@ const SingleProfile = () => {
             </Card.Body>
           </Card>
 
-          {/* Passiamo l'ID del profilo e canEdit=false per disabilitare l'editing */}
-          <Experiences userId={profileId} canEdit={false} />
-
           <Analysis />
           <Resources />
           <Professional />
+          {/* Passiamo l'ID del profilo e canEdit=false per disabilitare l'editing */}
+          <Experiences userId={profileId} canEdit={false} />
         </Col>
 
         <Col xs={12} md={5} lg={4} xl={3}>
           <SidebarProfile />
           <AdvertisingSide />
           <PeopleToKnowSide />
+
           <JobsCard />
           <AdvImg />
         </Col>
