@@ -7,7 +7,8 @@ import Jobs from "./components/Jobs/Jobs";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import AllSideProfiles from "./components/AllSideProfiles";
+import SingleProfile from "./components/SingleProfile";
 
 import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
@@ -53,6 +54,8 @@ const App = () => {
             </main>
           }
         />
+         <Route path="/allsideprofiles" element={<AllSideProfiles />} />
+         <Route path="/profile/:profileId" element={<SingleProfile />} />
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
         } />

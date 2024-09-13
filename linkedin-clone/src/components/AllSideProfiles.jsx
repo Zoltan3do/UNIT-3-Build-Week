@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, Button, Spinner } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchSingleProfile } from "../redux/actions/homePostAction";
 
 // L'URL dell'API per ottenere i profili
 const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -7,6 +10,8 @@ const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
 const AllSideProfiles = () => {
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // La fetch dei profili dall'API
   const fetchProfiles = async () => {
@@ -29,11 +34,15 @@ const AllSideProfiles = () => {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     fetchProfiles();
   }, []);
 
+  const handleProfileClick = (profileId) => {
+    dispatch(fetchSingleProfile(profileId));
+    navigate(`/profile/${profileId}`);
+  };
   if (loading) {
     return (
       <div className="d-flex justify-content-center">
@@ -67,6 +76,7 @@ const AllSideProfiles = () => {
             <Button
               variant="outline-secondary"
               className="m-2 rounded-5 border-2 text-black fw-5 w-75"
+              onClick={() => handleProfileClick(profile._id)}
             >
               Visualizza profilo
             </Button>
