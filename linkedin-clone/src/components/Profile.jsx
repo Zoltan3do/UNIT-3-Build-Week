@@ -14,8 +14,9 @@ import MainSidebar from './MainSidebar'
 
 
 import { myProfile } from "../redux/actions/ProfileSection";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Experiences from './Experience'
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -27,12 +28,19 @@ const Profile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const state = useSelector((state) => state.profile);
+  console.log('state',state._id)
+
+  console.log('profile',state.profile)
   return (
+
     <>
+   
       <Container>
         <Row>
           <Col xs={12} md={7} lg={8} xl={9}>
             <ProfileSection />
+            <Experiences userId={state.profile?._id} canEdit={true}  />
             <Suggestions />
             <Analysis />
             <Resources />
