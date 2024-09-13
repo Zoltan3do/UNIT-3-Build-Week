@@ -84,12 +84,15 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                     <Row className="fixed-top w-100 fs-xs">
                         <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
                             <Container className="d-flex justify-content-between align-items-center">
-                                <Navbar.Brand href="/">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                                        alt="linkedin logo"
-                                        style={{ width: 33 }}
-                                    />
+                                <Navbar.Brand>
+                                    <Link to="/home">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                            alt="linkedin logo"
+                                            style={{ width: 33 }}
+                                        />
+                                    </Link>
+
                                 </Navbar.Brand>
 
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -219,12 +222,14 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                     <Row className="fixed-top w-100 fs-xs no-scroll-margin">
                         <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
                             <Container className="d-flex justify-content-between align-items-center">
-                                <Navbar.Brand href="/">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                                        alt="linkedin logo"
-                                        style={{ width: 33 }}
-                                    />
+                                <Navbar.Brand >
+                                <Link to="/home">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                            alt="linkedin logo"
+                                            style={{ width: 33 }}
+                                        />
+                                    </Link>
                                 </Navbar.Brand>
 
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

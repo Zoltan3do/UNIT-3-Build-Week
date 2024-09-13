@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Card, ListGroup, Row } from "react-bootstrap";
 import { BsBookmarkFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import "./leftSidebar.css";
 
 
@@ -18,7 +19,9 @@ const LeftSidebar = ({ userProfile }) => {
                         />
                     </Card.Header>
                     <Card.Title className="text-center mt-5">
-                        {userProfile.name} {userProfile.surname}
+                        <Link to="/" className="text-dark text-decoration-none" >
+                            {userProfile.name} {userProfile.surname}
+                        </Link>
                     </Card.Title>
                     <Card.Text className="text-secondary text-center">
                         <p>{userProfile.bio}</p>
