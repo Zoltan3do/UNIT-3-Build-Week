@@ -8,8 +8,8 @@ function TendinaTu({ dati }) {
         <ListGroup className="custom-list-group">
             <ListGroup.Item className="custom-list-group-item">
                 <div className="d-flex align-items-center">
-                    <div className="profile-pic-container" style={{ width: "16%", height: "16%" }}>
-                            <img src={dati.image} alt="profile" className="profile-pic w-100" />
+                    <div className="profile-pic-container" style={{ width: "75px", height: "50px" }}>
+                            <img src={dati.image} alt="profile" className="profile-pic" />
                     </div>
                     <div className="ms-3 no-space">
                         
