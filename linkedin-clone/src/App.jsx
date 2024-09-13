@@ -62,6 +62,9 @@ const App = () => {
           <Route path="/jobs" element={
             <Jobs userProfile={onUserChange}></Jobs>
           } />
+        <Route path="/Messaging" element={
+          <Messaging userProfile={onUserChange}></Messaging>
+        } />
           <Route path="*" element={
             <NotFound />
           } />
