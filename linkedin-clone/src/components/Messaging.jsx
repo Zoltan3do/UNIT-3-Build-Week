@@ -108,11 +108,11 @@ const Messaging = () => {
             </InputGroup>
           </div>
 
-          <div className="d-flex justify-content-start mb-3">
+          <div className="d-flex justify-content-start mb-3 ms-2 ">
             <DropdownButton
               title="Posta in arrivo"
               variant="success"
-              className="green me-2 bg-success"
+              className=" me-3  green"
             >
               <Dropdown.Item href="#/action-1">Posta in arrivo</Dropdown.Item>
               <Dropdown.Item href="#/action-2">
