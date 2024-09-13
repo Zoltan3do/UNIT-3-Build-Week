@@ -8,8 +8,7 @@ import Resources from './Resources'
 import Activities from './Activities'
 import Professional from './Professional'
 import MainSidebar from './MainSidebar'
-
-
+import ExperienceCard from './profilePage/profileComponents/ExperienceCard'
 
 
 
@@ -38,6 +37,8 @@ const Profile = () => {
             <Resources />
             <Activities />
             <Professional />
+            
+            <ExperienceCard/>
           </Col>
           <Col xs={12} md={5} lg={4} xl={3}>
             <MainSidebar />
