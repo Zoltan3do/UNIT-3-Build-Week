@@ -230,19 +230,41 @@ const Messaging = () => {
 
        
         <Col md={3} className="p-3 bigi">
-          <div className="loreme-ipsum">
-            <div className="immagine text-center mt-3">
-            <img src="https://media.licdn.com/dms/image/v2/D560CAQHnX32JxlGu7Q/spinmail-bannerimage-shrink_300_250/spinmail-bannerimage-shrink_300_250/0/1649861338774?e=1726736400&v=beta&t=pKVGrmWZyl3YfPG8Q7Fxmu3N4IW17XHeNux5o8W7ptw" alt="" />
-            </div>
-           
-            <p className="bigi-1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <FooterHome/>
-          </div>
-        </Col>
+  <div className="loreme-ipsum">
+    <div className="immagine text-center mt-3 me-5 ">
+      <img
+        src="https://media.licdn.com/dms/image/v2/D560CAQHnX32JxlGu7Q/spinmail-bannerimage-shrink_300_250/spinmail-bannerimage-shrink_300_250/0/1649861338774?e=1726736400&v=beta&t=pKVGrmWZyl3YfPG8Q7Fxmu3N4IW17XHeNux5o8W7ptw"
+        alt=""
+      />
+    </div>
+    <div className="immagine text-center mt-3 me-5 ">
+      <img
+        src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
+        alt=""
+      />
+    </div>
+
+   
+    {/*<div className="card text-center mt-5 ms-5  " style={{ width: "19rem" }}>
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p className="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" className="card-link">
+          Card link
+        </a>
+        <a href="#" className="card-link">
+          Another link
+        </a>
+      </div>
+    </div>*/}
+
+    <FooterHome />
+  </div>
+</Col>
       </Row>
     </Container>
   );
