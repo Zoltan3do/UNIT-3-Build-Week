@@ -16,6 +16,7 @@ import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
 import NotFound from "./components/NotFound/NotFound";
 import JobsFinder from "./components/jobs/JobsFinder";
+import Messaging from "./components/Messaging";
 
 
 const App = () => {
@@ -39,8 +40,8 @@ const App = () => {
 
     <BrowserRouter>
       <header>
-        <MyNavbar 
-          onScrollChange={handleScrollChange} 
+        <MyNavbar
+          onScrollChange={handleScrollChange}
           onUserProfileChange={handleUserChange}
           onSearchChange={handleSearchChange}
         />
@@ -55,8 +56,8 @@ const App = () => {
             </main>
           }
         />
-         <Route path="/allsideprofiles" element={<AllSideProfiles />} />
-         <Route path="/profile/:profileId" element={<SingleProfile />} />
+        <Route path="/allsideprofiles" element={<AllSideProfiles />} />
+        <Route path="/profile/:profileId" element={<SingleProfile />} />
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
         } />
@@ -67,6 +68,7 @@ const App = () => {
           <NotFound />
         } />
         <Route path="/jobs-finder" element={<JobsFinder searchQuery={searchQuery} />} />
+        <Route path="/Messaging" element={<Messaging></Messaging>} />
       </Routes>
     </BrowserRouter>
   );

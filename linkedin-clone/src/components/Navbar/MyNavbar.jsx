@@ -84,12 +84,15 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                     <Row className="fixed-top w-100 fs-xs">
                         <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
                             <Container className="d-flex justify-content-between align-items-center">
-                                <Navbar.Brand href="/">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                                        alt="linkedin logo"
-                                        style={{ width: 33 }}
-                                    />
+                                <Navbar.Brand>
+                                    <Link to="/home">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                            alt="linkedin logo"
+                                            style={{ width: 33 }}
+                                        />
+                                    </Link>
+
                                 </Navbar.Brand>
 
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -123,10 +126,10 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                             <div>Lavoro</div>
                                         </Link>
 
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon text-decoration-none" to="/Messaging">
                                             <ChatDotsFill size={20} />
                                             <div>Messaggistica</div>
-                                        </div>
+                                        </Link>
 
                                         <div className="navbar-icon-container text-center mx-3 navbar-icon">
                                             <BellFill size={20} />
@@ -159,7 +162,6 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                                 <span className="mt-1">Per le aziende</span>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {/* Other menu items */}
                                             </Dropdown.Menu>
                                         </Dropdown>
 
@@ -220,12 +222,14 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                     <Row className="fixed-top w-100 fs-xs no-scroll-margin">
                         <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
                             <Container className="d-flex justify-content-between align-items-center">
-                                <Navbar.Brand href="/">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                                        alt="linkedin logo"
-                                        style={{ width: 33 }}
-                                    />
+                                <Navbar.Brand >
+                                <Link to="/home">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                            alt="linkedin logo"
+                                            style={{ width: 33 }}
+                                        />
+                                    </Link>
                                 </Navbar.Brand>
 
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -259,10 +263,10 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                             <div>Lavoro</div>
                                         </Link>
 
-                                        <div className="navbar-icon-container text-center mx-3 navbar-icon">
+                                        <Link className="navbar-icon-container text-center mx-3 navbar-icon text-decoration-none" to="/Messaging">
                                             <ChatDotsFill size={20} />
                                             <div>Messaggistica</div>
-                                        </div>
+                                        </Link>
 
                                         <div className="navbar-icon-container text-center mx-3 navbar-icon">
                                             <BellFill size={20} />
