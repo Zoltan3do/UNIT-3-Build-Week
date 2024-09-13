@@ -12,25 +12,8 @@ const AllSideProfiles = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [scrolled, setScrolled] = useState(false); // Stato per monitorare lo scroll
-  const path = useLocation().pathname;
-
-  // Funzione per monitorare la posizione dello scroll
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  // Aggiungi un event listener per lo scroll
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [percorsoDinamico, setPercorsoDinamico] = useState(false);
+  const path = useLocation().pathname
 
   // La fetch dei profili dall'API
   const fetchProfiles = async () => {
@@ -61,6 +44,8 @@ const AllSideProfiles = () => {
   const handleProfileClick = (profileId) => {
     dispatch(fetchSingleProfile(profileId));
     navigate(`/profile/${profileId}`);
+    
+
   };
 
   if (loading) {
@@ -74,7 +59,7 @@ const AllSideProfiles = () => {
   return (
     <div className="side-profiles">
       <h5 className="mt-3 text-start">Altri profili per te</h5>
-      {scrolled || path.includes("/profile/")
+      {path.includes('/profile/')
         ? profiles
             .reverse()
             .slice(55, 60)

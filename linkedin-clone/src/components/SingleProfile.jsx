@@ -14,7 +14,7 @@ import AdvertisingSide from "./AdvertisingSide"
 import PeopleToKnowSide from "./PeopleToKnowSide"
 import JobsCard from "./JobsCard"
 import AdvImg from "./AdvImg"
-import AllSideProfiles from "./AllSideProfiles";
+
 
 const SingleProfile = () => {
   const { profileId } = useParams();
@@ -212,7 +212,6 @@ const SingleProfile = () => {
       <SidebarProfile/>
      
         <AdvertisingSide/>
-        <AllSideProfiles/>
         <PeopleToKnowSide/>
         <JobsCard/>
         <AdvImg/>
