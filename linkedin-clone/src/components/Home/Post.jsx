@@ -2,10 +2,10 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-import { Card, Image, Button, Dropdown } from "react-bootstrap";
+import { Card, Image, Dropdown } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { BsTrash3 } from "react-icons/bs";
+
 
 const Post = ({
     post,
