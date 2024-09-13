@@ -12,7 +12,6 @@ const AllSideProfiles = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [percorsoDinamico, setPercorsoDinamico] = useState(false);
   const path = useLocation().pathname
 
   // La fetch dei profili dall'API
