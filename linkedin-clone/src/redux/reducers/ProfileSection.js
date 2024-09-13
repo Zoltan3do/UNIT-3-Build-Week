@@ -1,7 +1,7 @@
 import { MY_PROFILE } from '../actions/ProfileSection'
 
 const initialState = {
-  profile: null,
+  profile: {},
 }
 
 const ProfileSectionReducer = (state = initialState, action) => {

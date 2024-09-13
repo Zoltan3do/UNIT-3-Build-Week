@@ -57,6 +57,11 @@ body{
   color: green;
   height: 90px !important;
 }
+
+.bi-grid-3x3-gap-fill {
+  font-size: 20px;
+}
+
 .btn-modal-italiano {
   border: 1px solid rgb(189, 188, 188);
   border-radius: 30px;
