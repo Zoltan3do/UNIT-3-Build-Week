@@ -7,7 +7,8 @@ import Jobs from "./components/Jobs/Jobs";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import AllSideProfiles from "./components/AllSideProfiles";
+import SingleProfile from "./components/SingleProfile";
 
 import Profile from "./components/Profile";
 import MyNavbar from "./components/Navbar/MyNavbar";
@@ -15,7 +16,6 @@ import { useState } from 'react';
 import MyFooter from "./components/MyFooter";
 import NotFound from "./components/NotFound/NotFound";
 import JobsFinder from "./components/jobs/JobsFinder";
-import DinamicProfile from "./components/DinamicProfile/DinamicProfile";
 
 
 const App = () => {
@@ -36,6 +36,7 @@ const App = () => {
   }
 
   return (
+
     <BrowserRouter>
       <header>
         <MyNavbar 
@@ -54,6 +55,8 @@ const App = () => {
             </main>
           }
         />
+         <Route path="/allsideprofiles" element={<AllSideProfiles />} />
+         <Route path="/profile/:profileId" element={<SingleProfile />} />
         <Route path="/home" element={
           <Home userProfile={onUserChange} ></Home>
         } />
@@ -64,7 +67,6 @@ const App = () => {
           <NotFound />
         } />
         <Route path="/jobs-finder" element={<JobsFinder searchQuery={searchQuery} />} />
-        <Route path="dinamicProfile/:SingleProfileId" element={<DinamicProfile />}/>
       </Routes>
     </BrowserRouter>
   );
