@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import {
   addImageToPost,
-  deleteFromFavouriteAction,
+  
 } from "../redux/actions/ProfileSection";
 
 const Activities = () => {
@@ -63,7 +63,7 @@ const Activities = () => {
   // Fetch post dall'API
   const GetFetchPost = () => {
     fetch(
-      `https://striveschool-api.herokuapp.com/api/posts/66decad84d0def0015cef103`,
+      `https://striveschool-api.herokuapp.com/api/posts/`,
       {
         headers: {
           Authorization: `Bearer ${API_KEY}`, // Assicurata la presenza dell'API Key
@@ -72,8 +72,8 @@ const Activities = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setPosts(data);
-        console.log(data);
+        setPosts(data.filter(post => post.user.email && post.user.email === state1.profile.email ) );
+        console.log(data.filter(post => post.user.email === state1.profile.email ));
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -81,27 +81,35 @@ const Activities = () => {
   };
 
   // Eliminazione post
-  const handleDeletePost = (postId) => {
-    fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${API_KEY}`, 
-      },
-    })
-      .then((response) => {
+  const handleDeletePost = async (postId) => {
+    try {
+      console.log(postId);
+        const response = await fetch(
+            `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
+            {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY`,
+                },
+            }
+        );
+
         if (response.ok) {
-          dispatch(deleteFromFavouriteAction(postId));
+            setPosts(posts.filter(post => post._id !== postId)); // Aggiorno lo stato locale eliminando il post
+            alert('Post eliminato con successo!');
         } else {
-          throw new Error("Errore durante l'eliminazione del post");
+            alert('Errore durante l\'eliminazione del post');
         }
-      })
-      .catch((error) => console.error("Error:", error));
-  };
+    } catch (error) {
+        console.error('Errore durante l\'eliminazione del post:', error);
+    }
+};
+
 
   // Effettua il fetch all'inizio
   useEffect(() => {
     GetFetchPost();
-  }, []);
+  }, [state1.profile]);
 
   return (
     <>
@@ -137,13 +145,13 @@ const Activities = () => {
           </Row>
 
           <div className="card-text">
-            {state.posts.length === 0 ? (
+            {posts.length === 0 ? (
               <div className="mt-3">
                 <p>Non hai pubblicato ancora nulla</p>
                 <p>I post che condividi appariranno qui</p>
               </div>
             ) : (
-              state.posts.map((post) => {
+              posts.map((post) => {
                 return (
                   <Row
                     key={post._id}

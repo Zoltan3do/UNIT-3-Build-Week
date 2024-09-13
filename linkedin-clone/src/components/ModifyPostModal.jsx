@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal'
 
 const ModifyPostModal = ({ id, text, trigger }) => {
   const endPoint = `https://striveschool-api.herokuapp.com/api/posts/${id}`
-  const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+  const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
   const [show, setShow] = useState(false)
   const [inputValue, setInputValue] = useState(text)
   const [img, setImg] = useState(null)

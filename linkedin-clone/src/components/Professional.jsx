@@ -1,5 +1,5 @@
 import { Card, Col, Row } from "react-bootstrap";
-
+import logoEpicode from '../assets/imgs/logoEpicode.png'
 const Professional = () => {
   return (
     <>
@@ -18,9 +18,9 @@ const Professional = () => {
             <Row className="border-bottom mx-2 my-1">
               <Col className="col-3 col-sm-2 col-md-3 col-lg-2 col-xl-1">
                 <img
-                  src="https://ibb.co/8PcD3SH"
-                  style={{ width: "4em" }}
-                  alt="logo-scuola"
+                  src={logoEpicode}
+                  style={{ width: "3em" }}
+                  alt="logo"
                 />
               </Col>
               <Col className="col-11 col-sm-10 col-md-9 col-lg-10 col-xl-10 ms-xl-4 ">
