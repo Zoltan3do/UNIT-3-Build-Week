@@ -25,6 +25,7 @@
   padding-right: 10px;
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
+  cursor: pointer;
 }
 
 .job-listings-scroll::-webkit-scrollbar {
