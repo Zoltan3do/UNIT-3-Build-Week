@@ -7,7 +7,7 @@ import { useState } from "react";
 import { addPost } from "../redux/actions/ProfileSection";
 
 const PostModal = ({ show, hide }) => {
-  const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+  const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
   const [text, setText] = useState("");
   const [image, setImage] = useState(null);
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const PostModal = ({ show, hide }) => {
     fetch("https://striveschool-api.herokuapp.com/api/posts/", {
       method: "POST",
       headers: {
-        Authorization: API_KEY,
+        Authorization: `${API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ text }),

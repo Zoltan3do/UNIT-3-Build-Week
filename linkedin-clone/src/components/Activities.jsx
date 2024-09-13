@@ -63,7 +63,7 @@ const Activities = () => {
   // Fetch post dall'API
   const GetFetchPost = () => {
     fetch(
-      `https://striveschool-api.herokuapp.com/api/posts/66decad84d0def0015cef103`,
+      `https://striveschool-api.herokuapp.com/api/posts/`,
       {
         headers: {
           Authorization: `Bearer ${API_KEY}`, // Assicurata la presenza dell'API Key

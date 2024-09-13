@@ -15,6 +15,7 @@ const ProfileSection = () => {
     setShowPostModal(true);
   };
 
+  
   // Funzione per chiudere il modale per la creazione di un post
   const handleClosePostModal = () => {
     setShowPostModal(false);
