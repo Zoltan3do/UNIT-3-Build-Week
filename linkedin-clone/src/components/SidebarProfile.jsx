@@ -22,7 +22,7 @@ const SidebarProfile = () => {
 
   return (
     <>
-      <Col className="mb-3" >
+      <Col className="mb-3 mt-3" >
       <Card className="border border-1 rounded-2 p-2">
         {/* Sezione Lingua del profilo */}
         <div className="d-flex justify-content-between">

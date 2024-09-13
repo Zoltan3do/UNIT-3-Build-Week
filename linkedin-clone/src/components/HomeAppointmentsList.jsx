@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Card, Button } from 'react-bootstrap';
 import { BsTrash3 } from "react-icons/bs";
 

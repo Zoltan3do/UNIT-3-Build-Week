@@ -3,10 +3,11 @@ import { useRef, useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import token from "./tooken.json";
 
 const CreatePostModal = ({ profile, trigger }) => {
   const endPoint = 'https://striveschool-api.herokuapp.com/api/posts/'
-  const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+  const API_KEY = token.AUTH
   const [show, setShow] = useState(false)
   const [inputValue, setInputValue] = useState('')
   const [img, setImg] = useState(null)

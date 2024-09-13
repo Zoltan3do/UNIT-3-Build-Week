@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useRef } from 'react'
 import { Button, Modal } from 'react-bootstrap'
+import token from "./tooken.json";
 
 function ImageUploadProfile({ show, hide }) {
-  const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+  const API_KEY = token.AUTH
   const inputRef = useRef()
 
   const handleButtonClick = () => {

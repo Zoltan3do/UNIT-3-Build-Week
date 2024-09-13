@@ -5,12 +5,15 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Post from "./Post";
+import token from "../tooken.json"
 
 
 const AllPosts = ({ postsAdded }) => {
 
     const [posts, setPosts] = useState([]);
     const [numOfPosts, setNumOfPosts] = useState(20);
+
+    console.log("authorization" + token.AUTH)
 
     // const [postsChanged, setPostsChanged] = useState(0);
     // const [selectedPost, setSelectedPost] = useState(null);
@@ -27,7 +30,7 @@ const AllPosts = ({ postsAdded }) => {
                 "https://striveschool-api.herokuapp.com/api/posts",
                 {
                     headers: {
-                        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY`,
+                        Authorization: token.AUTH,
                     },
                 }
             );
@@ -51,7 +54,7 @@ const AllPosts = ({ postsAdded }) => {
                 {
                     method: 'DELETE',
                     headers: {
-                        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY`,
+                        Authorization: AUTH,
                     },
                 }
             );

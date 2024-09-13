@@ -5,6 +5,7 @@ import { FaRegClock } from "react-icons/fa";
 import { fetchSingleProfile } from "../redux/actions/homePostAction";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import token from "./tooken.json";
 
 // L'URL dell'API per ottenere i profili
 const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -27,7 +28,7 @@ const PeopleToKnowSide = () => {
       const response = await fetch(urlAPI, {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+            token.AUTH,
         },
       });
       if (!response.ok) {

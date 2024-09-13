@@ -14,6 +14,7 @@ import TendinaTu from "./TendinaTu";
 import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect, Suspense } from "react";
 import "./MyNavbar.css";
+import token from "../tooken.json"
 
 function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
     const navigate = useNavigate();
@@ -49,7 +50,7 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
 
 
     const userInfo = async () => {
-        const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRmNDI3NWFmNDM0YjAwMTU5ZDgzMmIiLCJpYXQiOjE3MjU5MDc5NDAsImV4cCI6MTcyNzExNzU0MH0.9BnplLmgaQIFjhcARlwTs5Yimp8cJnqRsIQPvF23W1g'
+        const API_KEY = token.AUTH
 
         try {
             const url = "https://striveschool-api.herokuapp.com/api/profile/me";
@@ -195,9 +196,11 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                                         }}
                                     />
                                     <div className="d-flex flex-column align-items-start no-spacex">
-                                        <strong>
-                                            {userProfile.name} {userProfile.surname}
-                                        </strong>
+                                        <Link to="/" className="text-decoration-none text-dark">
+                                            <strong>
+                                                {userProfile.name} {userProfile.surname}
+                                            </strong>
+                                        </Link>
                                         <br />
                                         <small> {userProfile.bio}</small>
                                     </div>
@@ -223,7 +226,7 @@ function MyNavbar({ onScrollChange, onUserProfileChange, onSearchChange }) {
                         <Navbar bg="light" variant="light" expand="lg" fixed="top" className={`w-100 ${isScroll ? 'shadow-sm' : ''}`}>
                             <Container className="d-flex justify-content-between align-items-center">
                                 <Navbar.Brand >
-                                <Link to="/home">
+                                    <Link to="/home">
                                         <img
                                             src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
                                             alt="linkedin logo"

@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 import { addPost } from "../redux/actions/ProfileSection";
+import token from "./tooken.json";
 
 const PostModal = ({ show, hide }) => {
-  const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+  const API_KEY = token.AUTH;
   const [text, setText] = useState("");
   const [image, setImage] = useState(null);
   const dispatch = useDispatch();

@@ -10,13 +10,14 @@ import {
   addImageToPost,
   
 } from "../redux/actions/ProfileSection";
+import token from "./tooken.json"
 
 const Activities = () => {
-  const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY';
+  const API_KEY = token.AUTH;
   
   const [showPostModal, setShowPostModal] = useState(false); // Stato per il modale post
   const [showActivitiesModal, setShowActivitiesModal] = useState(false); // Stato per il modale attività
-  const state = useSelector((state) => state.posts);
+  // const state = useSelector((state) => state.posts);
   const state1 = useSelector((state) => state.profile);
   const dispatch = useDispatch();
   const [posts, setPosts] = useState([]);
@@ -46,7 +47,7 @@ const Activities = () => {
         method: "POST",
         body: data,
         headers: {
-          Authorization: `Bearer ${API_KEY}`, 
+          Authorization: API_KEY , 
         },
       })
         .then((response) => response.json())
@@ -66,7 +67,7 @@ const Activities = () => {
       `https://striveschool-api.herokuapp.com/api/posts/`,
       {
         headers: {
-          Authorization: `Bearer ${API_KEY}`, // Assicurata la presenza dell'API Key
+          Authorization: API_KEY, // Assicurata la presenza dell'API Key
         },
       }
     )
@@ -89,7 +90,7 @@ const Activities = () => {
             {
                 method: 'DELETE',
                 headers: {
-                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY`,
+                    Authorization: API_KEY,
                 },
             }
         );

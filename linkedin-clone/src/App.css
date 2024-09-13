@@ -147,3 +147,7 @@
 .article-icon-home{
   color: #e06847;
 }
+
+.addEx:hover{
+  cursor:pointer
+}

@@ -1,13 +1,12 @@
 import {
-  Button,
+
   Card,
   Col,
   Row,
   Spinner,
-  Modal,
   Container,
 } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchSingleProfile } from "../redux/actions/homePostAction";
@@ -21,6 +20,7 @@ import PeopleToKnowSide from "./PeopleToKnowSide";
 import JobsCard from "./JobsCard";
 import AdvImg from "./AdvImg";
 import Experiences from "./Experience";
+import MyFooter from "./myFooter"
 
 const SingleProfile = () => {
   const { profileId } = useParams(); // Ottieni l'ID del profilo dalla URL
@@ -41,7 +41,7 @@ const SingleProfile = () => {
   }
 
   return (
-    <Container className="mt-5">
+    <Container style={{ marginTop: "80px" }}>
       <Row>
         <Col xs={12} md={7} lg={8} xl={9}>
           <Card>
@@ -79,6 +79,7 @@ const SingleProfile = () => {
           <AdvImg />
         </Col>
       </Row>
+      <MyFooter />
     </Container>
   );
 };

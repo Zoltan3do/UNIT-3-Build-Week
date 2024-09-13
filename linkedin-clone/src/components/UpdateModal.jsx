@@ -3,10 +3,13 @@ import { Button, Form, Modal } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { updateExperience } from '../redux/actions/ProfileSection'
 import { useState } from 'react'
-const userId = '66decad84d0def0015cef103'
+import token from "./tooken.json";
 
+
+
+const userId = '66decad84d0def0015cef103'
 const UpdateModal = (props) => {
-  const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+  const API_KEY = token.AUTH
   const dispatch = useDispatch()
   console.log(props.data)
 

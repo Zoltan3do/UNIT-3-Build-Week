@@ -3,6 +3,7 @@ import { Card, Button, Spinner } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchSingleProfile } from "../redux/actions/homePostAction";
+import token from "./tooken.json";
 
 // L'URL dell'API per ottenere i profili
 const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -20,7 +21,7 @@ const AllSideProfiles = () => {
       const response = await fetch(urlAPI, {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
+            token.AUTH,
         },
       });
       if (!response.ok) {

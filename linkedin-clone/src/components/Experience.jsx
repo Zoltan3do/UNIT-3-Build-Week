@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { Card, Button, Spinner, Modal, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import token from "./tooken.json";
+
 
 const Experiences = ({ userId, canEdit = false }) => {
   const [experiences, setExperiences] = useState([]);
@@ -31,7 +34,7 @@ const Experiences = ({ userId, canEdit = false }) => {
       const response = await fetch(urlAPI, {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+            token.AUTH,
         },
       });
       if (!response.ok) {
@@ -50,7 +53,7 @@ const Experiences = ({ userId, canEdit = false }) => {
     if (userId) {
       fetchExperiences();
     }
-  }, [userId]);
+  }, [userId, experiences]);
 
   if (!userId) {
     return <div>Impossibile caricare esperienze.</div>;
@@ -63,7 +66,7 @@ const Experiences = ({ userId, canEdit = false }) => {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+            token.AUTH,
         },
         body: JSON.stringify(newExperience),
       });
@@ -100,7 +103,7 @@ const Experiences = ({ userId, canEdit = false }) => {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+            token.AUTH,
         },
         body: JSON.stringify(currentExperience),
       });
@@ -129,7 +132,7 @@ const Experiences = ({ userId, canEdit = false }) => {
         method: "DELETE",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+            token.AUTH,
         },
       });
 
@@ -155,41 +158,48 @@ const Experiences = ({ userId, canEdit = false }) => {
   }
 
   return (
-    <div>
-      <h5 className="mt-3">Esperienze</h5>
-
-      {canEdit && (
-        <Button onClick={() => setShowModal(true)}>Aggiungi esperienza</Button>
-      )}
+    <Card className="p-3">
+      <div className="d-flex justify-content-between mb-3">
+        <h5>Esperienze</h5>
+        {canEdit && (
+          // <Button onClick={() => setShowModal(true)} className="mb-3 rounded-circle" style={{ width: "30px", height: "30px" }}>
+          <i className="bi bi-plus text-center fs-1 addEx" onClick={() => setShowModal(true)} style={{ marginTop: "-20px" }}></i>
+        )}
+      </div>
 
       {experiences.length > 0 ? (
         experiences.map((experience) => (
           <Card key={experience._id} className="mb-2">
-            <Card.Body>
-              <Card.Title>{experience.role}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                {experience.company}
-              </Card.Subtitle>
-              <Card.Text>{experience.description}</Card.Text>
-
+            <Card.Body className="d-flex justify-content-between">
+              <div>
+                <Card.Title>{experience.role}</Card.Title>
+                <Card.Subtitle className="mb-2">
+                  {experience.company}
+                </Card.Subtitle>
+                <Card.Text>{experience.description}</Card.Text>
+              </div>
               {canEdit && (
                 <>
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      setCurrentExperience(experience);
-                      setShowModal(true);
-                    }}
-                  >
-                    Modifica
-                  </Button>
-                  <Button
-                    variant="danger"
-                    className="ms-2"
-                    onClick={() => handleDeleteExperience(experience._id)}
-                  >
-                    Elimina
-                  </Button>
+                  <div >
+                    <Button
+                      variant="transparent"
+                      onClick={() => {
+                        setCurrentExperience(experience);
+                        setShowModal(true);
+                      }} className="p-0"
+                    >
+                      <i className="bi bi-pencil text-primary fs-5 "></i>
+                    </Button>
+                    <Button
+                      variant="transparent"
+                      className="ms-3 p-0"
+                      onClick={() => handleDeleteExperience(experience._id)}
+
+                    >
+                      <i className="bi bi-trash text-danger fs-5"></i>
+                    </Button>
+                  </div>
+
                 </>
               )}
             </Card.Body>
@@ -217,9 +227,9 @@ const Experiences = ({ userId, canEdit = false }) => {
                 onChange={(e) =>
                   currentExperience
                     ? setCurrentExperience({
-                        ...currentExperience,
-                        role: e.target.value,
-                      })
+                      ...currentExperience,
+                      role: e.target.value,
+                    })
                     : setNewExperience({ ...newExperience, role: e.target.value })
                 }
               />
@@ -236,9 +246,9 @@ const Experiences = ({ userId, canEdit = false }) => {
                 onChange={(e) =>
                   currentExperience
                     ? setCurrentExperience({
-                        ...currentExperience,
-                        company: e.target.value,
-                      })
+                      ...currentExperience,
+                      company: e.target.value,
+                    })
                     : setNewExperience({ ...newExperience, company: e.target.value })
                 }
               />
@@ -255,9 +265,9 @@ const Experiences = ({ userId, canEdit = false }) => {
                 onChange={(e) =>
                   currentExperience
                     ? setCurrentExperience({
-                        ...currentExperience,
-                        startDate: e.target.value,
-                      })
+                      ...currentExperience,
+                      startDate: e.target.value,
+                    })
                     : setNewExperience({ ...newExperience, startDate: e.target.value })
                 }
               />
@@ -272,9 +282,9 @@ const Experiences = ({ userId, canEdit = false }) => {
                 onChange={(e) =>
                   currentExperience
                     ? setCurrentExperience({
-                        ...currentExperience,
-                        endDate: e.target.value,
-                      })
+                      ...currentExperience,
+                      endDate: e.target.value,
+                    })
                     : setNewExperience({ ...newExperience, endDate: e.target.value })
                 }
               />
@@ -292,13 +302,13 @@ const Experiences = ({ userId, canEdit = false }) => {
                 onChange={(e) =>
                   currentExperience
                     ? setCurrentExperience({
-                        ...currentExperience,
-                        description: e.target.value,
-                      })
+                      ...currentExperience,
+                      description: e.target.value,
+                    })
                     : setNewExperience({
-                        ...newExperience,
-                        description: e.target.value,
-                      })
+                      ...newExperience,
+                      description: e.target.value,
+                    })
                 }
               />
             </Form.Group>
@@ -312,9 +322,9 @@ const Experiences = ({ userId, canEdit = false }) => {
                 onChange={(e) =>
                   currentExperience
                     ? setCurrentExperience({
-                        ...currentExperience,
-                        area: e.target.value,
-                      })
+                      ...currentExperience,
+                      area: e.target.value,
+                    })
                     : setNewExperience({ ...newExperience, area: e.target.value })
                 }
               />
@@ -337,10 +347,10 @@ const Experiences = ({ userId, canEdit = false }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </Card>
   );
 };
 
 export default Experiences;
 
-            
+

@@ -4,9 +4,10 @@ export const ADD_IMAGE_TO_POST = "ADD_IMAGE_TO_POST";
 export const MOD_POST = "MOD_POST";
 export const SET_IMAGE = "SET_IMAGE";
 export const DELETE_FROM_FAVOURITES = "DELETE_FROM_FAVOURITES";
+import token from "../../components/tooken.json"
  
 // Action per ottenere il profilo dell'utente
-const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY'
+const API_KEY = token.AUTH
 export const myProfile = () => {
   const url = "https://striveschool-api.herokuapp.com/api/profile/me";
   return async (dispatch) => {
@@ -64,7 +65,7 @@ export const deleteFromFavouriteAction = (postId) => async (dispatch) => {
         method: "DELETE",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
+            token.AUTH
         },
       }
     );

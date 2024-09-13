@@ -3,6 +3,7 @@ export const FETCH_HOME_POSTS = "FETCH_HOME_POST";
 export const SET_PROFILE = "SET_PROFILE";
 export const DELETE_HOME_POST = "DELETE_HOME_POST";
 export const SET_SINGLE_PROFILE = "SET_SINGLE_PROFILE";
+import token from "../../components/tooken.json";
 
 //fetch per ottenere tutti i post
 export const fetchHomePosts = async () => {
@@ -12,7 +13,7 @@ export const fetchHomePosts = async () => {
       method: "GET",
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
+          token.AUTH,
       },
     }
   );
@@ -34,7 +35,7 @@ export const createHomePost = (content) => async (dispatch) => {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
+            token.AUTH,
         },
         body: JSON.stringify(newPost),
       }
@@ -47,27 +48,27 @@ export const createHomePost = (content) => async (dispatch) => {
     console.error("Error creating post", error);
   }
 };
- //fetch per il profilo utente
+//fetch per il profilo utente
 export const fetchUserProfile = () => async (dispatch) => {
-    try {
-      const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
-        },
-      });
-      
-      if (response.ok) {
-        const userData = await response.json();
-        console.log('User data', userData);
-        dispatch({ type: SET_PROFILE, payload: userData });
-      } else {
-        console.error("Failed to fetch user profile");
-      }
-    } catch (error) {
-      console.error("Error fetching user profile", error);
+  try {
+    const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+      method: "GET",
+      headers: {
+        Authorization: token.AUTH
+      },
+    });
+
+    if (response.ok) {
+      const userData = await response.json();
+      console.log('User data', userData);
+      dispatch({ type: SET_PROFILE, payload: userData });
+    } else {
+      console.error("Failed to fetch user profile");
     }
-  };
+  } catch (error) {
+    console.error("Error fetching user profile", error);
+  }
+};
 //fetch per cancellare il post
 export const deleteHomePost = (postId) => async (dispatch) => {
   try {
@@ -77,7 +78,7 @@ export const deleteHomePost = (postId) => async (dispatch) => {
         method: "DELETE",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
+            token.AUTH,
         },
       }
     );
@@ -98,7 +99,7 @@ export const fetchSingleProfile = (profileId) => async (dispatch) => {
       {
         method: "GET",
         headers: {
-          Authorization:  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlYjA5YjRkMGRlZjAwMTVjZWYwZmYiLCJpYXQiOjE3MjU4NzAyNjYsImV4cCI6MTcyNzA3OTg2Nn0.BzqbDuJcgAVaJ4zqQUJZ_9qggQsyBP3riei09Byqd68",
+          Authorization: token.AUTH,
         },
       }
     );

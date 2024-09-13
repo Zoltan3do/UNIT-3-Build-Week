@@ -23,7 +23,7 @@ const ProfileSection = () => {
 
   return (
     <>
-      <Row className="mt-5 mb-2">
+      <Row className="mb-2" style={{marginTop:"98px"}}>
         <Col>
           {state.profile ? (
             <>

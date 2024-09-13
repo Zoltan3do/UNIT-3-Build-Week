@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, Button} from "react-bootstrap";
+import token from "./tooken.json";
 
 
 const urlAPI = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -30,7 +31,7 @@ const JobsCard = () => {
         const response = await fetch(urlAPI, {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRlY2FkODRkMGRlZjAwMTVjZWYxMDMiLCJpYXQiOjE3MjU4OTY2ODMsImV4cCI6MTcyNzEwNjI4M30.UMss5w-kKWhh82MNP_XXrl81zWY5Eu9fIi17fe-n7eY",
+              token.AUTH,
           },
         });
         const data = await response.json();
